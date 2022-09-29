@@ -34,7 +34,25 @@
     <title>BluePrint WebDesigns {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top" >sub header</header>
+    <!-- <header class="container-fluid fixed-top" >sub header</header> -->
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">Home</h5>
+            <span class="text-muted">What We Do</span>
+            <span class="text-muted">Lets Work Together!</span>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          {% if user.is_authenticated %}
+                <span class="navbar-text nav-item">
+                    Logged in as: {{ user }}
+                </span>
+                {% endif %}
+        </nav>
+      </div>
     
     <!--display message sent from django-->
     {% if messages %}
