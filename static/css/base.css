@@ -1,3 +1,4 @@
+/*------------------base css----------------------------*/
 .nav-brand-text {
     font-size:x-large
 }
@@ -10,3 +11,9 @@ strong {
     color: blue;
 }
 
+/*remove whitspace from beneath footer*/
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
