@@ -56,9 +56,15 @@
             <a class="text-white nav-link" href="#">Testimonials</a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="text-white btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+
+        <!--search form-->
+        <form method="GET" action=""> <!--2. will now submit form to 'all products' view -->  <!--1 GET = submit search as url parameters, action empty as url to submit to not exist yet-->
+          <div class="input-group w-100"> <!--100% width-->
+              <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search"> <!--q = query = action submitted to url-->
+              <div class="input-group-append"> <!--bs class-->
+                <button class="text-white btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+              </div>
+          </div>
         </form>
         
         <!--account dropdown menu-->
@@ -67,17 +73,27 @@
         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="text-center">
               <div><i class="fas fa-user fa-lg"></i></div>
-              <p class="text-white my-0">{{ user }} Account</p>
+              <p class="text-white my-0">Account</p>
           </div>
       </a>
           <!--django template tag for what is displayed in dropdown menu-->
         <div class="dropdown-menu border-0" aria-labelledby="user-options">
+          <span class=" ">Logged in as {{ user }} </span>
           {% if request.user.is_authenticated %}        <!--if registered =  display 'my profile and 'log out'-->
               {% if request.user.is_superuser %}       <!--if logged in and superuser= link to manage store-->
                   <a href="" class="dropdown-item">Product Management</a>
               {% endif %}
               <a href="" class="dropdown-item">My Profile</a>
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+              
+              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">My Cart
+              {% if grand_total %}
+             ${{ grand_total|floatformat:2 }}  <!--if grand total exist= display within 2 decimals-->
+                {% else %}
+                    $0.00          <!--if not exist= display 0-->
+              {% endif %}
+              </a>
+              
           {% else %}                            <!--if not registered=display 'Register and 'login'-->
               <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
               <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -85,6 +101,7 @@
         </div>
       </div>
     </nav>
+    
 
 
     <!--sub heading below main header-->
