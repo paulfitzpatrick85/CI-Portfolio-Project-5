@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+# if os.path.isfile('env.py'):  # for when heroku is setup
+#     import env
 
 from pathlib import Path
 import os
@@ -42,8 +44,16 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_summernote',
     'home',
+    'review',
+    
 ]
+
+
+LOGIN_REDIRECT_URL = '/'   
+LOGOUT_REDIRECT_URL = '/'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
