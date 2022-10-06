@@ -7,4 +7,5 @@ from review.views import reviews_list
 
 urlpatterns = [
     path('reviews.html', views.reviews_list, name='reviews_list'),
+    path('add_review.html', views.add_review, name='add_review'),
 ]

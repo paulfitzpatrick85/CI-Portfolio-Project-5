@@ -3,14 +3,9 @@
 
 {% block content %}
 <div>
-    <h1>reviews page</h1>
-    <div>
-        <h2>form</h2>
-        <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
-            {{ ReviewForm }}
-            {% csrf_token %}
-        </form>
-    </div>
-    
+    <h1>review page</h1>
+    <a href="{% url 'add_review' %}">add review</a>
 </div>
     {% endblock %}
+
+    
