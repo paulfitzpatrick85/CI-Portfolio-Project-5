@@ -2,10 +2,37 @@
 {% load static %}
 
 {% block content %}
-<div>
-    <h1>review page</h1>
-    <a href="{% url 'add_review' %}">add review</a>
-</div>
+<div class="overlay"></div>
+    <div class="container-fluid">
+        <div class=" text-align">
+            <h1 >Customer Reviews</h1>
+            
+            {% if user.is_authenticated %}
+                <h3>As a customer you can click <a href="{% url 'add_review' %}">add review</a> to add your review of our services</h3>
+            {% endif %}
+        </div>
+        <br>
+
+        <!--display users review once form is approved-->
+        {% for review in reviews %}
+        <div class="text-align">
+            <p>{{ review.customer_review }}<p></p>
+            <h4>Review by <i>{{ review.customer_name }}</i></h4>
+            <hr>
+            
+
+                {% empty %}
+                <!--display message when no reviews have been added yet-->
+            <h3 class="center-contents local-band-text">Be the first to add a review</h3>
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+
+
+
     {% endblock %}
 
     

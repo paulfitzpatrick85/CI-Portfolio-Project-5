@@ -6,11 +6,12 @@
 <div>
 
     <div>
+
         <form class="all-forms" enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
-            <h3>Add A Review Here <i class="fa fa-arrow-down"></i></h3>
+            <h3>Edit Your Review Here <i class="fa fa-arrow-down"></i></h3>
             {{ form| crispy }}
             {% csrf_token %}
-            <button type="submit" class="btn btn-signup btn-lg">Submit Review</button>
+            <button type="submit" class="btn btn-signup btn-lg">Edit Review</button>
         </form>
     </div>
     

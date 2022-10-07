@@ -17,7 +17,7 @@ def reviews_list(request):
 def add_review(request):
     if request.method == "POST":
         form = ReviewForm(request.POST)  # populate form in django with request.POST data instead of doing it manually
-        if form.is_valid():   # is_valid= django compare data in post request to data required on model
+        if form.is_valid():    # is_valid= django compare data in post request to data required on model
             form.save()        # see commits for original code
 
         return redirect('reviews.html')  # directed here after adding review

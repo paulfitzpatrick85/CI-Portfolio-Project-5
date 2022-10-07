@@ -56,7 +56,7 @@ strong {
 }
 
 /*log in, signup log out boxes*/
-.sign {
+.all-forms {
     background-color: #31313B;
     width: 40%;
     margin: auto; 
@@ -66,13 +66,29 @@ strong {
    
 }
 
+.text-align {
+    text-align: center;
+}
+
 .btn-signup {
     background-color:antiquewhite;
     color:black; 
     margin: 2%;    
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: azure;
+	z-index: -1;  /*make this sit on top of everything else on page*/
+}
 
+hr {
+    width: 50%;
+}
 
 
 
