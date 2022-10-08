@@ -117,6 +117,11 @@
         <div class="message-container"></div>
     {% endif %}
 
+    {% for message in messages %}
+    <div class="alert {{ message.tags }} alert-dismissible fade show msg-box" id="msg" role="alert">
+        {{ message | safe }}    
+    </div>
+    {% endfor %}
   
 
 
@@ -136,7 +141,7 @@
  
     
     
-    
+    <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>
 

@@ -82,7 +82,7 @@ strong {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: azure;
+	background: antiquewhite;
 	z-index: -1;  /*make this sit on top of everything else on page*/
 }
 
@@ -90,6 +90,10 @@ hr {
     width: 50%;
 }
 
+.alert {
+    background-color: aqua;
+    width: 50%;
+}
 
 
 

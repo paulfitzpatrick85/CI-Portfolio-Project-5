@@ -26,13 +26,15 @@ def add_review(request):
             form.instance.name = request.user.username
             review = form.save(commit=False)
             review.save()        # see commits for original code
+            messages.success(request, 
+            'Thank your for reviewing our service, your review will be displayed shortly.')
         else:
             band_form = ReviewForm()
 
         return redirect('reviews.html')  # directed here after adding review
     form = ReviewForm()
     context = {
-        'form': form
+        'form': form, 'review_added': True,
     }
     return render(request, 'add_review.html', context)
 
