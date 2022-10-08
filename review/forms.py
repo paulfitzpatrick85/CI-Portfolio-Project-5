@@ -7,6 +7,5 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ('customer_name',
                   'customer_email',
-                  'customer_password',
                   'customer_review',)
                   
