@@ -43,7 +43,7 @@ def add_review(request):
 def edit_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
     # Authenticated user views and edits only their own bands
-    if review.customer_email != request.user.email: 
+    if review.customer_email != request.user.email:
         messages.success(request, 'Sorry, this is not your view to edit.')
         return redirect('/')
            

@@ -43,7 +43,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="nav-brand-text text-white nav-text navbar-brand" href="#"><strong>BluePrint</strong>WebDesigns</a>
+      <a class="nav-brand-text  text-white nav-text navbar-brand" href="/"><strong>BluePrint</strong>WebDesigns</a>
     
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -58,15 +58,6 @@
           </li>
         </ul>
         
-        <!--search form-->
-        <form method="GET" action=""> <!--2. will now submit form to 'all products' view -->  <!--1 GET = submit search as url parameters, action empty as url to submit to not exist yet-->
-          <div class="input-group w-100"> <!--100% width-->
-              <input class="form-control mr-sm-2" type="text" name="q" placeholder="Search"> <!--q = query = action submitted to url-->
-              <div class="input-group-append"> <!--bs class-->
-                <button class="text-white btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-              </div>
-          </div>
-        </form>
         
         <!--account dropdown menu-->
         <li class="list-inline-item dropdown">
@@ -81,11 +72,12 @@
         <div class="dropdown-menu border-0" aria-labelledby="user-options">
           
           {% if request.user.is_authenticated %}        <!--if registered =  display 'my profile and 'log out'-->
+          <span class=" ">Logged in as {{ user }} </span>
               {% if request.user.is_superuser %}       <!--if logged in and superuser= link to manage store-->
               <span class=" ">Logged in as {{ user }} </span>
                   <a href="" class="dropdown-item">Product Management</a>
               {% endif %}
-              <a href="" class="dropdown-item">My Profile</a>
+            
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
               
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">My Cart
