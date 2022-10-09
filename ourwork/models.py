@@ -8,6 +8,7 @@ class Projects(models.Model):
     project_description = models.TextField()
     project_image = models.ImageField(blank=True, upload_to='media/')
     project_url = models.URLField(max_length=100)
+    project_language = models.TextField(default=None)
     project_approved = models.BooleanField(default=False)
 
     def __str__(self):
