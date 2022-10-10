@@ -98,11 +98,19 @@ hr {
 /*----projects----*/
 
 .proj-img {
-    width: 20%;
-    height: 30%;
+    padding: 4px;
+    border: #4cbcd7 solid 2px;
+    width: 27%;
+    height: 27%;
     border-radius: 50%;
 }
 
+.projects {
+    display:inline-block;
+    width: 25%;
+    margin-left: 4%; 
+    text-align: center;
+  }
 
 
 

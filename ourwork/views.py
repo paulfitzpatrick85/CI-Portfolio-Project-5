@@ -6,6 +6,7 @@ from django.contrib import messages
 
 def projects_list(request):
     """ A view to return the project's' page page """
+    paginate_by = 8
     projects = Projects.objects.filter(project_approved=True)
     context = {        # dict with reviews
         'projects': projects
