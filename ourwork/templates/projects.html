@@ -1,29 +1,28 @@
 {% extends "base.html" %}
-{% load static %}
-
 {% block content %}
-<h1 class="text-align">projects page</h1>
+{% load static %}
 <div class="overlay"></div>
-
-
-<div class="projects grid-wrapper">
-    {% for project in projects %}
+<div class="projects project-div">
     <div>
-        <img class="proj-img" src="{{ project.project_image.url }}" alt="">
-        <h3>{{ project.project_title }}</h3>
-        <p><i>{{ project.project_description }}</i></p>
-        <p>Programming languages used: {{ project.project_language }}</p>
-        <a href="{{ project.project_url }}" target="_blank">View site</a>
-        <hr>
-        
+    
+        {% for project in projects %}
+            <img class="proj-img" src="{{ project.project_image.url }}" alt="">
+            <h3>{{ project.project_title }}</h3>
+            <p class="project-description"><i>{{ project.project_description }}</i></p>
+            <p class="project-description">Programming Languages Used: {{ project.project_language }}</p>
+            <a href="{{ project.project_url }}" target="_blank">View '{{ project.project_title }}' site</a>
+            
+            <br><br><br>
+       
         {% if forloop.counter|divisibleby:4 %}
     </div>
     <div>
         {% endif %}
         {% endfor %}
-       
     </div>
 
 </div>
 
 {% endblock %}
+
+</div>

@@ -82,7 +82,7 @@ strong {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: antiquewhite;
+	background: #4cbcd7 ;
 	z-index: -1;  /*make this sit on top of everything else on page*/
 }
 
@@ -99,22 +99,52 @@ hr {
 
 .proj-img {
     padding: 4px;
-    border: #4cbcd7 solid 2px;
-    width: 27%;
-    height: 27%;
+    border: black solid 1px;
+    width: 60%;
+    height: 13%;
     border-radius: 50%;
 }
 
 .projects {
-    display:inline-block;
-    width: 25%;
-    margin-left: 4%; 
+    margin-left: 4%;
     text-align: center;
+
+  }
+
+  .div-margin {
+    margin-bottom: 20px;
   }
 
 
+  .project-description {
+   padding-left: 20%;
+   padding-right: 20%;
+  }
+
+  .project-div {
+    height: 100%;
+  }
+
+  a {
+    color: white;
+  }
 
 /* -------------------------------- Media Queries */
+
+@media screen and (min-width: 940px) {
+    .projects {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        text-align: center;
+        }
+}
+
+@media screen and (max-width: 550px) {
+.genre-image {
+    width: 75%;
+    }
+}
+
 
 /* Slightly larger container on xl screens */                       /*taken from walkthrough*/
 @media (min-width: 1200px) {
