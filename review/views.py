@@ -5,7 +5,7 @@ from .forms import ReviewForm
 from django.contrib import messages
 
 
-                                    # render reviews page
+# render reviews page
 def reviews_list(request):
     reviews = Review.objects.filter(review_approved=True)  # display query set of all approved reviews in the db
     context = {        # dict with reviews

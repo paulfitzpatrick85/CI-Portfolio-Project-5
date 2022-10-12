@@ -9,6 +9,5 @@ class Review(models.Model):
     customer_review = models.TextField()
     review_approved = models.BooleanField(default=False)
     
-
     def __str__(self):
         return self.customer_name
