@@ -65,6 +65,17 @@ strong {
     color: antiquewhite;
    
 }
+.all-forms-2 {
+    width: 40%;
+    padding: 2%;
+    
+    color: antiquewhite;
+   
+}
+
+#id_message.textarea {
+    width: 90%;
+ }
 
 .text-align {
     text-align: center;
@@ -84,6 +95,21 @@ strong {
 	position: fixed;
 	background: #4cbcd7 ;
 	z-index: -1;  /*make this sit on top of everything else on page*/
+}
+
+.overlay-lightbulb {
+    height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: url('/media/lightbulb.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
+    background-size: cover;     
+	z-index: -1;  
+}
+
+.opacity {
+    opacity: 0.2;
 }
 
 hr {

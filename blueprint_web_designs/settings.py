@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'home',
     'review',
     'ourwork',
+    'package',
     
 ]
 
