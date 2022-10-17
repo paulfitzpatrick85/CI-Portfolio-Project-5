@@ -4,13 +4,15 @@
 
 
 <div class="overlay"></div>
-<div class="projects project-div">
+<div class="projects project-div package package-div">
     <div>
     <h1>We like to keep things simple.</h1>
     <h2>We offer just four packages.</h2>
     <h2>Take a Look and see what best suits your needs.</h2>
         {% for package in packages %}
+        <a href="{% url 'package_detail' package.id %}"> 
             <img class="package-img" src="{{ package.image.url }}" alt="{{ package.name }}">
+        </a>
             <h3 class="mt-2">{{ package.name }}</h3>
             <p class="project-description"><i>{{ package.short_description }}</i></p>
             <p class="project-description">Price {{ package.price }}</p>
@@ -23,6 +25,8 @@
 
 </div>
 
-{% endblock %}
+
 
 </div>
+
+{% endblock %}

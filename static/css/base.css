@@ -137,6 +137,10 @@ hr {
 
   }
 
+  .project-div {
+    height: 100%;
+  }
+
   .div-margin {
     margin-bottom: 20px;
   }
@@ -147,19 +151,29 @@ hr {
    padding-right: 20%;
   }
 
-  .project-div {
-    height: 100%;
-  }
 
   a {
     color: white;
   }
+
+  .full-description {
+    margin: 10%;
+   }
+
+   .pack-detail-img {
+    width: 30%;
+   }
 
 
   /*---------------------packages-------------------*/
 
 .package-img {
     width: 50%;
+}
+
+.package-div {
+    text-align: center;
+    height: 100%;
 }
 
 /* -------------------------------- Media Queries */
