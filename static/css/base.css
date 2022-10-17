@@ -155,6 +155,13 @@ hr {
     color: white;
   }
 
+
+  /*---------------------packages-------------------*/
+
+.package-img {
+    width: 50%;
+}
+
 /* -------------------------------- Media Queries */
 
 @media screen and (min-width: 940px) {

@@ -6,7 +6,7 @@
     <div>
     
         {% for project in projects %}
-            <img class="proj-img" src="{{ project.project_image.url }}" alt="">
+            <img class="proj-img" src="{{ project.project_image.url }}" alt="{{ project.project_title }}">
             <h3>{{ project.project_title }}</h3>
             <p class="project-description"><i>{{ project.project_description }}</i></p>
             <p class="project-description">Programming Languages Used: {{ project.project_language }}</p>
