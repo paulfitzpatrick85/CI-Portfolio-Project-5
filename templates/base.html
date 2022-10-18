@@ -78,13 +78,13 @@
           {% if request.user.is_authenticated %}        <!--if registered =  display 'my profile and 'log out'-->
           <span class=" ">Logged in as {{ user }} </span>
               {% if request.user.is_superuser %}       <!--if logged in and superuser= link to manage store-->
-              <span class=" ">Logged in as {{ user }} </span>
+              
                   <a href="" class="dropdown-item">Product Management</a>
               {% endif %}
             
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
               
-              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">My Cart
+              <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">My Cart
               {% if grand_total %}
              ${{ grand_total|floatformat:2 }}  <!--if grand total exist= display within 2 decimals-->
                 {% else %}

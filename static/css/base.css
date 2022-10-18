@@ -168,12 +168,22 @@ hr {
   /*---------------------packages-------------------*/
 
 .package-img {
-    width: 50%;
+    width: 55%;
+}
+
+.package-detail-img {
+    width: 40%;
 }
 
 .package-div {
     text-align: center;
     height: 100%;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
 }
 
 /* -------------------------------- Media Queries */
@@ -186,11 +196,11 @@ hr {
         }
 }
 
-@media screen and (max-width: 550px) {
+/* @media screen and (max-width: 550px) {
 .genre-image {
     width: 75%;
     }
-}
+} */
 
 
 /* Slightly larger container on xl screens */                       /*taken from walkthrough*/

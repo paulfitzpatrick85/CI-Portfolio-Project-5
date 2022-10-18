@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags%}
+
+
+{% block content %}
+<div class="overlay"></div>
+<h1 class="text-align">cart page</h1>
+<div>
+    <div class="row">
+        <div class="col text-align">
+            {% if cart_items %}
+                <div class="table-responsive rounded"></div>
+            {% else %}
+                <p class="lead mb-5">Your cart is empty.</p>
+                <a href="{% url 'all_packages' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Browsing</span>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+    {% endblock %}
+
