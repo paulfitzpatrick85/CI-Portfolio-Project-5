@@ -10,7 +10,11 @@
     <div class="row">
         <div class="col text-align">
             {% if cart_items %}
-                <div class="table-responsive rounded"></div>
+                <div class="table-responsive rounded">
+                    {% for items in cart_items %}
+                    {{ cart_items}}
+                    {% endfor %}
+                </div>
             {% else %}
                 <p class="lead mb-5">Your cart is empty.</p>
                 <a href="{% url 'all_packages' %}" class="btn btn-outline-black rounded-0 btn-lg">
