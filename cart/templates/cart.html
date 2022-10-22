@@ -6,14 +6,42 @@
 {% block content %}
 <div class="overlay"></div>
 <h1 class="text-align">cart page</h1>
+<hr>
 <div>
     <div class="row">
         <div class="col text-align">
             {% if cart_items %}
                 <div class="table-responsive rounded">
-                    {% for items in cart_items %}
-                    {{ cart_items}}
-                    {% endfor %}
+                    <table class="table table-hover table-borderless">
+                        <thead>
+                          <tr>
+                            <th scope="col">Package</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">qty</th>
+                          </tr>
+                        </thead>
+                        {% for item in cart_items %}
+                        <tbody>
+                          <tr>
+                            <td>{{ item.package.name }}</td>
+                            <td>{{ item.package.price }}</td> 
+                            <td>{{ item.quantity }}</td> 
+                          </tr>
+                    
+
+                        {% endfor %}
+                          <tr>
+                            <td colspan="5" class="pt-5 text-right">
+                             <hr><br>
+                             <h6>Cart Total: ${{ total|floatformat:2 }}</h6>
+                             <h6>Tax: ${{ tax|floatformat:2 }}</h6>
+                             <h4 class="mt-4">Grand Total: ${{ grand_total|floatformat:2 }}</h4>   
+                            </td>
+                          </tr>
+                         </tbody>
+                      </table>
+                    
+                   
                 </div>
             {% else %}
                 <p class="lead mb-5">Your cart is empty.</p>

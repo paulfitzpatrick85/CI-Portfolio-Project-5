@@ -11,6 +11,7 @@ def cart_contents(request):
     package_count = 0
     cart = request.session.get('cart', {})
 
+# Not used but left in project for possible future adjustments to site after course
     for item_id, quantity in cart.items():
         package = get_object_or_404(Package, pk=item_id)
         total += quantity * package.price
@@ -27,11 +28,12 @@ def cart_contents(request):
     # else:
     #     delivery = 0
     #     free_delivery_delta = 0
-    
-    grand_total = total
+    tax = ((total / 100) * 23)
+    grand_total = total + tax 
     
     context = {
         'cart_items': cart_items,
+        'tax': tax,
         'total': total,
         'package_count': package_count,
         'grand_total': grand_total,
