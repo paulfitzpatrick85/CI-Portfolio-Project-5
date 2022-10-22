@@ -8,10 +8,10 @@ def cart_contents(request):
 
     cart_items = []
     total = 0
-    package_count = 0
+    package_count = 0  # not used, but left if for future use on expanding website
     cart = request.session.get('cart', {})
 
-# Not used but left in project for possible future adjustments to site after course
+#  Not used but left in project for possible future adjustments to site after course
     for item_id, quantity in cart.items():
         package = get_object_or_404(Package, pk=item_id)
         total += quantity * package.price

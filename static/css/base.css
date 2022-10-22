@@ -1,9 +1,5 @@
 /*------------------base css----------------------------*/
-html, body {
-    padding:0; 
-    margin:0; 
-    height:100%;
-}
+
 
 footer{
     position: absolute;
@@ -14,20 +10,23 @@ footer{
     width: 100%;
 }
 
-/*remove whitspace from beneath footer*/
-/* footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-} */
+/* stop dropdown appearing off screen and creating horizontal scroll*/
+.account {
+    margin-right: 80px;
+}
 
 
 body {
     background: url('/media/blueprint-background-unsplash.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
     background-size: cover;                                                                  /*makes image stay in center of page*/
-    /*height: calc(100vh - 164px); 164 will be eventual height of top header*/
-    
+    padding:0; 
+    margin:0; 
+    height:100%; 
     font-family: 'Montserrat';
+}
+
+.remove-item {
+    cursor: pointer;
 }
 
 /* from Bulma */           /*css from bulma- like bs library, keeps fs icon center and same size unless made otherwise*/
@@ -47,7 +46,7 @@ body {
     color: white;
 }
 
-strong {
+.bluetext {
     color: #4cbcd7;
 }
 
@@ -238,3 +237,10 @@ hr {
         width: 70%;
     }
     }
+
+    @media (max-width: 1017px) {
+        .hide-pipe {
+            display: none;
+        }
+        }
+

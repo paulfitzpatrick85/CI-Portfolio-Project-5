@@ -21,7 +21,8 @@
 
             <form class="form" action="{% url 'add_to_cart' package.id %}" method="POST">
                 {% csrf_token %}
-                <!-- <div class="form-row">
+                <!--add to cart will not function without this, but Qty editing not wanted in project-->
+                <div class="form-row hide">
                     <div class="col-12">
                         <p class="mt-3"><strong>Quantity:</strong></p>
                         <div class="form-group w-50">
@@ -29,21 +30,20 @@
                                 <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ package.id }}" id="id_qty_{{ package.id }}">
                             </div>
                         </div>
-                    </div> -->
-
-                    <div class="col-12">
-                        <a href="{% url 'all_packages' %}" class="btn btn-signup">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="text-uppercase">Keep Browsing</span>
-                        </a>
-                        
-                        <input type="submit" class="btn btn-signup" value="Add to cart">
-                    </div>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    
+                    </div>    
                 </div>
+                <div class="col-12">
+                    <a href="{% url 'all_packages' %}" class="btn btn-signup">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span>Keep Browsing</span>
+                    </a>
+                    
+                    <input type="submit" class="btn btn-signup" value="Add to cart">
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </div>
+                
             </form>
         </div>
         
