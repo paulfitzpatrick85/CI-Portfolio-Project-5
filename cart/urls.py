@@ -9,4 +9,3 @@ urlpatterns = [
     path('cart.html/<item_id>/', views.add_to_cart, name='add_to_cart'),
     path('remove/<item_id>/', views.remove_from_cart, name='remove_from_cart'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-

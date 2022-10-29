@@ -109,10 +109,7 @@
     {% endblock %} -->
 
     
-    <!--display message sent from django-->
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
+    
 
     {% for message in messages %}
     <div class="alert {{ message.tags }} alert-dismissible fade show msg-box" id="msg" role="alert">

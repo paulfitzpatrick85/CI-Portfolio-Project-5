@@ -94,10 +94,15 @@ body {
 
 .carousel-image {
     border-radius: 5%;
-    height: 300px;
-    
+    height: 300px;   
 }
 
+.message-container {
+   position: fixed;
+   top: 80px;
+   right: 25px;
+   z-index: 999999999; 
+}
 
 /*---------------subscribe page-----------------*/
 

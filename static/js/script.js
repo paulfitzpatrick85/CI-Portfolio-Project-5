@@ -26,9 +26,10 @@ $('.remove-item').click(function(e) {
      });
 })
 
-
 $('.carousel').carousel({
     interval: 2000
   })
+
+
 
 
