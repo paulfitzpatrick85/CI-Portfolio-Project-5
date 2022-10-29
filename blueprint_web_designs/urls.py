@@ -27,5 +27,6 @@ urlpatterns = [
     path('', include('ourwork.urls')),
     path('', include('package.urls')),
     path('', include('cart.urls')),
+    # path('', include('checkout.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)   #  wire up js file to project

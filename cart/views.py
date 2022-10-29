@@ -32,7 +32,7 @@ def add_to_cart(request, item_id):
     return redirect(redirect_url)
 
 
-@csrf_exempt  #  This skips csrf
+@csrf_exempt
 def remove_from_cart(request, item_id):
     """Remove the item from the shopping bag"""
 
@@ -55,11 +55,11 @@ def remove_from_cart(request, item_id):
     except Exception as e:
         return HttpResponse(status=500)
 
-# @csrf_exempt  #  This skips csrf
+
+# @csrf_exempt
 # def remove_from_cart(request, item_id):
-#     """Remove the item from the shopping bag"""
-#     cart = get_object_or_404(Package, id=item_id)
-#     cart.delete(item_id)
-            
-#     request.session['cart'] = cart
+#     cart = request.session.get('cart', {})
+#     package = get_object_or_404(Package, item_id=item_id)
+#     cart.delete()
 #     return redirect(redirect_url)
+

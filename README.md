@@ -19,3 +19,7 @@
 ![mockup review](https://user-images.githubusercontent.com/55660566/193449676-9c6acc80-9711-48ce-b37a-7bba0ed90dc1.jpg)
 
 ![mockup contact page](https://user-images.githubusercontent.com/55660566/193449680-d73b0359-d56c-482e-bdca-2fde3bc1ee22.jpg)
+
+
+## Credits
+checkout models - most of code take from b/a project
