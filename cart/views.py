@@ -37,29 +37,35 @@ def remove_from_cart(request, item_id):
     """Remove the item from the shopping bag"""
 
     try:
-        size = None
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
         cart = request.session.get('cart', {})
-
-        if size:
-            del cart[item_id]['items_by_size'][size]
-            if not cart[item_id]['items_by_size']:
-                cart.pop(item_id)
-        else:
-            cart.pop(item_id)
+        cart.pop(item_id)
             
-        request.session['cart'] = cart
+        # request.session['cart'] = cart
         return HttpResponse(status=200)
 
     except Exception as e:
+        print(e)
         return HttpResponse(status=500)
+        # request.session['cart'] = cart
+        # return redirect(redirect_url)
+
 
 
 # @csrf_exempt
 # def remove_from_cart(request, item_id):
 #     cart = request.session.get('cart', {})
 #     package = get_object_or_404(Package, item_id=item_id)
-#     cart.delete()
+#     cart.delete(package)
 #     return redirect(redirect_url)
 
+
+# @csrf_exempt
+# def remove_from_cart(request, item_id):
+#     """Remove the item from the shopping bag"""
+#     print('hello')
+#     print(item_id)
+#     cart = request.session.get('cart', {})
+#     cart.pop(item_id)
+#     redirect_url = request.POST.get('redirect_url')      
+#     request.session['cart'] = cart
+#     return redirect(redirect_url)
