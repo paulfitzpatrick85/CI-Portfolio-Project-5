@@ -5,8 +5,7 @@
 
 {% block content %}
 <div class="overlay-white"></div>
-<h1 class="text-align">My Cart</h1>
-<hr>
+<h1 class="text-align mb-5">Checkout</h1>
 <div>
     <div class="row">
         <div class="col text-align">
@@ -14,6 +13,7 @@
             <div class="row">
                 <div class="col-12 col-lg-6 order-lg-last mb-5">
                     <p class="text-muted">Order Summary</p>
+                    <hr>
                     <div class="row">
                         <div class="col-7 offset-2">
                             <p class="mb-1 mt-0 small text-muted">Item</p>
@@ -26,11 +26,7 @@
                         <div class="row">
                             <div class="col-2 mb-1">
                                 <a href="{% url 'package_detail' item.package.id %}">
-                                    {% if item.product.image %}
-                                        <img class="w-100" src="{{ item.package.image.url }}" alt="{{ package.name }}">
-                                    {% else %}
-                                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ package.name }}">
-                                    {% endif %}
+                                        <img class="w-100" src="{{ item.package.image.url }}" alt="{{ package.name }}"> 
                                 </a>
                             </div>
                             <div class="col-7">
@@ -39,7 +35,7 @@
                                 <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                             </div>
                             <div class="col-3 text-right">
-                                <p class="my-0 small text-muted">${{ item.package.price | calc_subtotal:item.quantity }}</p>
+                                <p class="my-0 small text-muted">${{ item.package.price }}</p>
                             </div>
                         </div>
                     {% endfor %}
@@ -47,12 +43,14 @@
                     <div class="row text-black text-right">
                         <div class="col-7 offset-2">
                             <p class="my-0">Order Total:</p>
+
+                            <p class="my-0">Tax:</p>
                         
                             <p class="my-0">Grand Total:</p>
                         </div>
                         <div class="col-3">
                             <p class="my-0">${{ total | floatformat:2 }}</p>
-                            
+                            <p class="my-0">${{ tax|floatformat:2 }}</p>
                             <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
                         </div>
                     </div>
@@ -71,24 +69,24 @@
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
-                        {{ package_ordered_form.customer_name | as_crispy_field }}
-                        {{ package_ordered_form.customer_email | as_crispy_field }}
+                        {{ package_ordered_form.customer_name }}
+                        <hr>
+                        {{ package_ordered_form.customer_email }}
+                        <hr>
+                        {{ package_ordered_form.phone_number }}
+                      <small id="Help" class="form-text text-muted">We'll never share your information with anyone else.</small>
                     </fieldset>
-                    <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Delivery - not used</legend>
-                        {{ package_ordered.phone_number | as_crispy_field }}
-                        <div class="form-check form-check-inline float-right mr-0">
-							{% if user.is_authenticated %}
-								<label class="form-check-label" for="id-save-info">Save this information to my profile</label>
-                                <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-							{% else %}
-								<label class="form-check-label" for="id-save-info">
-                                    <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                    <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                                </label>
-							{% endif %}
-						</div>
-                    </fieldset>
+                    <div class="form-check form-check-inline float-right mr-0">
+                        {% if user.is_authenticated %}
+                            <label class="form-check-label" for="id-save-info">Save this information to my profile</label>
+                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                        {% else %}
+                            <label class="form-check-label" for="id-save-info">
+                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
+                            </label>
+                        {% endif %}
+                    </div>
                     <fieldset class="px-3">
                         <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                         <!-- A Stripe card element will go here -->
@@ -103,7 +101,7 @@
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
-							<span class="font-weight-bold">Adjust cart - not used</span>
+							<span class="font-weight-bold">Return To Cart</span>
 						</a>
 						<button id="submit-button" class="btn btn-black rounded-0">
 							<span class="font-weight-bold">Complete Order</span>
@@ -118,7 +116,7 @@
 							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
 						</p>
 					</div>
-                </form>
+                  </form>
                 <!--------------------------end of form------------------------->
 
 

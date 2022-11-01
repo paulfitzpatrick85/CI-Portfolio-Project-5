@@ -5,6 +5,6 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', views.checkout, name='checkout')
+    path('checkout.html', views.checkout, name='checkout')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

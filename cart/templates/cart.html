@@ -43,6 +43,14 @@
                       </tbody>
                     </table>
                   </div>
+                  <div>
+                    <a href="{% url 'checkout' %}" class="btn btn-black bg-dark rounded-0 btn-lg">
+                      <span class="text-uppercase">Secure Checkout</span>
+                      <span class="icon">
+                          <i class="fas fa-lock"></i>
+                      </span>
+                  </a>
+                  </div>
             {% else %}
                 <p class="lead mb-5">Your cart is empty.</p>
                 <a href="{% url 'all_packages' %}" class="btn btn-outline-black rounded-0 btn-lg">
