@@ -39,9 +39,13 @@
                         </span>
                         <span>Packages Page</span>
                     </a>
-                    
+                    {% if user.is_authenticated %}
                     <input type="submit" class="btn btn-signup" value="Add to cart">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    {% else %}
+    
+                    <a class="btn btn-signup" href="{% url 'account_login' %}">You must register/log in to add items to your cart</a>
+                    {% endif %}
                 </div>
                 
             </form>
