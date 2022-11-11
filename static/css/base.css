@@ -104,6 +104,12 @@ body {
    z-index: 999999999; 
 }
 
+.lang-img {
+    width: 15%;
+    height: 20%;
+    border-radius: 5%;
+}
+
 /*---------------subscribe page-----------------*/
 
 .overlay {
@@ -216,6 +222,11 @@ hr {
 	position: fixed;
 	background: azure;
 	z-index: -1;  /*make this sit on top of everything else on page*/
+}
+
+.pay-btn {
+    background-color: yellow;
+    border: black solid 2px;
 }
 
 /* --------------- Media Queries--------------------------*/

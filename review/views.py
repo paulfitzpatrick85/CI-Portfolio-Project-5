@@ -45,7 +45,7 @@ def edit_review(request, review_id):
     # Authenticated user views and edits only their own bands
     if review.customer_email != request.user.email:
         messages.success(request, 'Sorry, this is not your view to edit.')
-        return redirect('/')
+        return redirect('/reviews.html')
            
     else:
         form = ReviewForm(data=request.GET)
@@ -75,8 +75,8 @@ def delete_review(request, review_id):
     review = get_object_or_404(Review, id=review_id)
     # Authenticated user can delete only their own reviews
     if review.customer_email != request.user.email: 
-        messages.success(request, 'Sorry, this is not your view to delete.')
-        return redirect('/')
+        messages.success(request, 'Sorry, this is not your review to delete.')
+        return redirect('/reviews.html')
     else:
         review.delete()
         messages.success(request, 
