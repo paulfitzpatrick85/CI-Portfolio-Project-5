@@ -22,6 +22,7 @@
 
 
 ## Credits
-checkout models - most of code take from b/a project
+checkout models - most of code take from b/a project but changed slightly
 signals.py taken from b/a
 checkout/forms - taken from b/a
+stripe elements.js code - b/a
