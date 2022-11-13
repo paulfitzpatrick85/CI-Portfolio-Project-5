@@ -35,7 +35,7 @@
                                 <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                             </div>
                             <div class="col-3 text-right">
-                                <p class="my-0 small text-muted">${{ item.package.price }}</p>
+                                <p class="my-0 small text-muted">€{{ item.package.price }}</p>
                             </div>
                         </div>
                     {% endfor %}
@@ -49,9 +49,9 @@
                             <p class="my-0">Grand Total:</p>
                         </div>
                         <div class="col-3">
-                            <p class="my-0">${{ total | floatformat:2 }}</p>
-                            <p class="my-0">${{ tax|floatformat:2 }}</p>
-                            <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                            <p class="my-0">€{{ total | floatformat:2 }}</p>
+                            <p class="my-0">€{{ tax|floatformat:2 }}</p>
+                            <p class="my-0"><strong>€{{ grand_total | floatformat:2 }}</strong></p>
                         </div>
                     </div>
                 </div>
@@ -74,6 +74,8 @@
                         {{ package_ordered_form.customer_email }}
                         <hr>
                         {{ package_ordered_form.phone_number }}
+                        <hr>
+                        {{ package_ordered_form.postal_code }}
                       <small id="Help" class="form-text text-muted">We'll never share your information with anyone else.</small>
                     </fieldset>
 

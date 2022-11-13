@@ -5,7 +5,8 @@ from .models import Package_ordered
 class PackageOrderedForm(forms.ModelForm):
     class Meta:
         model = Package_ordered
-        fields = ('customer_name', 'customer_email', 'phone_number',)
+        fields = ('customer_name', 'customer_email',
+                  'phone_number', 'postal_code',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -17,6 +18,7 @@ class PackageOrderedForm(forms.ModelForm):
             'customer_name': 'Customer Name',
             'customer_email': 'Customer Email Address',
             'phone_number': 'Phone Number',
+            'postal_code': 'postal_code'
         }
         # taken from b/a project
         self.fields['customer_name'].widget.attrs['autofocus'] = True
