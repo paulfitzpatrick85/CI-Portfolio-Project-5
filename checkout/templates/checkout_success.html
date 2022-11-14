@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags%}
+
+
+{% block content %}
+<div class="overlay-white"></div>
+<h1 class="text-align mb-5">Thanks you for placing your order!</h1>
+<h4>We will be in touch soon, Please check both your inbox and spam folders</h4>
+<div>
+    <div class="row">
+        <div class="col text-align">
+        
+
+           
+                
+      
+       
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static '/js/stripe_elements.js' %}"></script>
+{% endblock %}
+

@@ -78,10 +78,10 @@
         <div class="dropdown-menu border-0" aria-labelledby="user-options">
           
           {% if request.user.is_authenticated %}        <!--if registered =  display 'my profile and 'log out'-->
-          <span class=" ">Logged in as {{ user }} </span>
+          <span class=" ">Logged in: {{ user }} </span>
               {% if request.user.is_superuser %}       <!--if logged in and superuser= link to manage store-->
               
-                  <a href="" class="dropdown-item">Products</a>
+              <a href="" class="dropdown-item">Products</a>
               {% endif %}
             
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
