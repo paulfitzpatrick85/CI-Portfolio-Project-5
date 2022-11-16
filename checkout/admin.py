@@ -12,12 +12,12 @@ class Package_OrderedAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = ('order_number', 'date',
-                       'order_total',
+                       'order_total', 'order_tax',
                        'grand_total',)
 
     fields = ('order_number', 'date', 'customer_name',
               'customer_email', 'phone_number',
-              'order_total', 'grand_total',)
+              'order_total', 'order_tax', 'grand_total',)
 
     list_display = ('order_number', 'date', 'customer_name',
                     'order_total',

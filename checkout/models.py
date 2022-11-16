@@ -14,6 +14,7 @@ class Package_ordered(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     postal_code = models.CharField(max_length=20, null=True, blank=True) # not wanted but added to make stripe payments work
     # delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
+    order_tax = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
@@ -34,8 +35,8 @@ class Package_ordered(models.Model):
         # else:
         #     self.delivery_cost = 0
         # tax = ((order_total / 100) * 23)
-        tax = (self.order_total / 100) * 23 
-        self.grand_total = self.order_total + tax 
+        self.order_tax = (self.order_total / 100) * 23 
+        self.grand_total = self.order_total + self.order_tax 
         
         self.save()
 
