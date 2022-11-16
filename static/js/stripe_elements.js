@@ -47,6 +47,7 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();                     //prevent default action-post
     card.update({ 'disabled': true});              //prevent multiply payment submissions
     $('#submit-button').attr('disabled', true);    //prevent multiply payment submissions
+    
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,

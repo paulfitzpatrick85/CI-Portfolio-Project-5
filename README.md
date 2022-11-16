@@ -218,6 +218,7 @@ The site is designed to be used on devices as small as 300px.
 signals.py taken from b/a
 checkout/forms - taken from b/a
 stripe elements.js code - b/a
+checkout success - bs used from b/a
 
 
 
