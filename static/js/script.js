@@ -5,15 +5,15 @@ setTimeout(function() {
 }, 3000);
         
 
-
+// from b/a + changed
 // Remove item and reload on click
 $('.remove-item').click(function(e) {
-    var csrfToken = "{{ csrf_token }}";
-    var itemId = $(this).attr('id').split('remove_')[1];
+    // var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).attr('id')
     var url = `/remove/${itemId}/`;     
-    var data = {'csrfmiddlewaretoken': csrfToken};
+    // var data = {'csrfmiddlewaretoken': csrfToken};
 
-    $.post(url, data)
+    $.post(url)   // $.post(url, data)
      .done(function() {
          location.reload();
      });

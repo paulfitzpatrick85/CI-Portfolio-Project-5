@@ -54,7 +54,7 @@ class Package_ordered(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Package_ordered, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
+    package_order = models.ForeignKey(Package_ordered, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     package = models.ForeignKey(Package, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)

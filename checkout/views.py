@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from .forms import PackageOrderedForm
 from package.models import Package
-from .models import Package_ordered, OrderLineItem
+from .models import Package_ordered, OrderLineItem  
 from cart.contexts import cart_contents
 from django.conf import settings
 import stripe
 
+
+# package_ordered
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -23,13 +25,13 @@ def checkout(request):
         }
         order_form = PackageOrderedForm(form_data)
         if order_form.is_valid():
-            order = order_form.save()
+            package_order = order_form.save()
             for item_id, item_data in cart.items():
                 try:
                     package = Package.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
-                            order=order,
+                            package_order=package_order,
                             package=package,
                             quantity=item_data,
                         )
@@ -41,11 +43,11 @@ def checkout(request):
                         "One of the packages in your cart wasn't found in our database. "
                         "Please call us for assistance!")
                     )
-                    order.delete()
+                    package_order.delete()
                     return redirect(reverse('view_cart'))
 
             # request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success', args=[package_order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -91,17 +93,17 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
-    order = get_object_or_404(Package_ordered, order_number=order_number)
+    package_order = get_object_or_404(Package_ordered, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
-        email will be sent to {order.customer_email}.')
+        email will be sent to {package_order.customer_email}.')
 
     if 'cart' in request.session:
         del request.session['cart']
 
     template = 'checkout_success.html'
     context = {
-        'order': order,
+        'package_order': package_order,
     }
 
     return render(request, template, context)
