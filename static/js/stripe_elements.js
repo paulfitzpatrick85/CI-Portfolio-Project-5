@@ -51,6 +51,11 @@ form.addEventListener('submit', function(ev) {
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
+            billing_details: {
+                name: $.trim(form.customer_name.value),
+                phone: $.trim(form.phone_number.value),
+                email: $.trim(form.customer_email.value),
+            }    
         }
     }).then(function(result) {
         if (result.error) {
@@ -67,6 +72,7 @@ form.addEventListener('submit', function(ev) {
             if (result.paymentIntent.status === 'succeeded') {
                 form.submit();
             }
+        
         }
     });
 });
