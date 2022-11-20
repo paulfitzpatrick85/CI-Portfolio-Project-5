@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import handler404
 
 
 urlpatterns = [
@@ -30,3 +31,5 @@ urlpatterns = [
     path('', include('checkout.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)   #  wire up js file to project
+
+handler404 = 'blueprint_web_designs.views.handler404'
