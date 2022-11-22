@@ -270,7 +270,12 @@ hr {
 }
 
 /* --------------- checkout pages--------------------------*/
-
+.success-page-btn {
+    background-color:antiquewhite;
+    color:black; 
+    margin: 2%;  
+    border: solid 3px #31313B;
+}
 
 
 /* --------------- Media Queries--------------------------*/
