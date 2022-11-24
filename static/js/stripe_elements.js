@@ -47,32 +47,43 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();                     //prevent default action-post
     card.update({ 'disabled': true});              //prevent multiply payment submissions
     $('#submit-button').attr('disabled', true);    //prevent multiply payment submissions
-    
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-            card: card,
-            billing_details: {
-                name: $.trim(form.customer_name.value),
-                phone: $.trim(form.phone_number.value),
-                email: $.trim(form.customer_email.value),
-            }    
-        }
-    }).then(function(result) {
-        if (result.error) {
-            var errorDiv = document.getElementById('card-errors');
-            var html = `
-                <span class="icon" role="alert">
-                <i class="fas fa-times"></i>
-                </span>
-                <span>${result.error.message}</span>`;
-            $(errorDiv).html(html);
-            card.update({ 'disabled': false}); // in case of error, re-inable cart for user to adjust
-            $('#submit-button').attr('disabled', false);
-        } else {
-            if (result.paymentIntent.status === 'succeeded') {
-                form.submit();
+    var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    var url = '/checkout/cache_checkout/';
+    $.post(url, postData).done(function () {
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+                card: card,
+                billing_details: {
+                    name: $.trim(form.customer_name.value),
+                    phone: $.trim(form.phone_number.value),
+                    email: $.trim(form.customer_email.value),
+                }    
             }
-        
-        }
-    });
-}); 
+        }).then(function(result) {
+            if (result.error) {
+                var errorDiv = document.getElementById('card-errors');
+                var html = `
+                    <span class="icon" role="alert">
+                    <i class="fas fa-times"></i>
+                    </span>
+                    <span>${result.error.message}</span>`;
+                $(errorDiv).html(html);
+                card.update({ 'disabled': false}); // in case of error, re-inable cart for user to adjust
+                $('#submit-button').attr('disabled', false);
+            } else {
+                if (result.paymentIntent.status === 'succeeded') {
+                    form.submit();
+                }
+            }
+        });
+    }).fail(function () {
+        // just reload the page, the error will be in django messages
+        location.reload();  
+    })
+});
