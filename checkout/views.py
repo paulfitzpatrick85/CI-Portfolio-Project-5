@@ -40,7 +40,7 @@ def checkout(request):
             'customer_name': request.POST['customer_name'],
             'customer_email': request.POST['customer_email'],
             'phone_number': request.POST['phone_number'],
-            # 'postal_code': request.POST['postal_code'],
+            'postcode': request.POST['postcode'],
         }
         order_form = PackageOrderedForm(form_data)
         if order_form.is_valid():

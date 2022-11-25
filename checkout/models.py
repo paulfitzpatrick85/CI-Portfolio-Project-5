@@ -12,7 +12,7 @@ class Package_ordered(models.Model):
     customer_email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    postal_code = models.CharField(max_length=20, null=True, blank=True) # not wanted but added to make stripe payments work
+    postcode = models.CharField(max_length=20, null=True, blank=True) # not wanted but added to make stripe payments work
     # delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_tax = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
@@ -70,6 +70,4 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Package {self.package.name} on order {self.order.order_number}'
-
-                                                   # self.package_ordered.order_number
+        return f'Package {self.package.name} on order {self.package_order.order_number}'

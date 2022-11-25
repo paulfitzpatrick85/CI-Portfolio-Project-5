@@ -44,9 +44,9 @@ card.addEventListener('change', function (event) {
 var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function(ev) {
-    ev.preventDefault();                     //prevent default action-post
-    card.update({ 'disabled': true});              //prevent multiply payment submissions
-    $('#submit-button').attr('disabled', true);    //prevent multiply payment submissions
+    ev.preventDefault();                     
+    card.update({ 'disabled': true});              
+    $('#submit-button').attr('disabled', true);    
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -54,7 +54,7 @@ form.addEventListener('submit', function(ev) {
         'client_secret': clientSecret,
         'save_info': saveInfo,
     };
-    var url = '/checkout/cache_checkout/';
+    var url = '/checkout/cache_checkout_data/';
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -63,9 +63,18 @@ form.addEventListener('submit', function(ev) {
                     name: $.trim(form.customer_name.value),
                     phone: $.trim(form.phone_number.value),
                     email: $.trim(form.customer_email.value),
-                    // postal_code: $.trim(form.postal_code.value),
-                }    
-            }
+                    address:{
+                        postal_code: $.trim(form.postcode.value),
+                    }
+                }
+            },
+            shipping: {
+                name: $.trim(form.customer_name.value),
+                phone: $.trim(form.phone_number.value),
+                address: {
+                    postal_code: $.trim(form.postcode.value),   
+                }
+            },
         }).then(function(result) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
