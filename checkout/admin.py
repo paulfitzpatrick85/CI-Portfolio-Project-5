@@ -17,7 +17,8 @@ class Package_OrderedAdmin(admin.ModelAdmin):
 
     fields = ('order_number', 'date', 'customer_name',
               'customer_email', 'phone_number',
-              'order_total', 'order_tax', 'grand_total', 'original_cart', 'stripe_pid')
+              'order_total', 'order_tax', 'grand_total',
+              'original_cart', 'stripe_pid')
 
     list_display = ('order_number', 'date', 'customer_name',
                     'order_total',

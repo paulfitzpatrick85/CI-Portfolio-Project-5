@@ -18,7 +18,7 @@ class PackageOrderedForm(forms.ModelForm):
             'customer_name': 'Customer Name',
             'customer_email': 'Customer Email Address',
             'phone_number': 'Phone Number',
-            'postal_code': 'postal_code'
+            'postal_code': 'postcode'
         }
         # taken from b/a project
         self.fields['customer_name'].widget.attrs['autofocus'] = True

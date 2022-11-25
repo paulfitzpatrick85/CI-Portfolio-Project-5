@@ -63,6 +63,7 @@ form.addEventListener('submit', function(ev) {
                     name: $.trim(form.customer_name.value),
                     phone: $.trim(form.phone_number.value),
                     email: $.trim(form.customer_email.value),
+                    // postal_code: $.trim(form.postal_code.value),
                 }    
             }
         }).then(function(result) {

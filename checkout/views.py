@@ -40,11 +40,15 @@ def checkout(request):
             'customer_name': request.POST['customer_name'],
             'customer_email': request.POST['customer_email'],
             'phone_number': request.POST['phone_number'],
-            'postal_code': request.POST['postal_code'],
+            # 'postal_code': request.POST['postal_code'],
         }
         order_form = PackageOrderedForm(form_data)
         if order_form.is_valid():
-            package_order = order_form.save()
+            package_order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            Package_ordered.stripe_pid = pid
+            Package_ordered.original_cart = json.dumps(cart)
+            package_order.save()
             for item_id, item_data in cart.items():
                 try:
                     package = Package.objects.get(id=item_id)
