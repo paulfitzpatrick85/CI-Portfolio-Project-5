@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-skfwfqjl&&38^#1s!f7qdg)7uf4!e%jh@^hdszxn+c&(7*73zu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ci-pp5-blueprint-webdesigns', 'localhost']
+ALLOWED_HOSTS = ['ci-pp5-blueprint-webdesigns.herokuapp.com', 'localhost']
 
 
 # Application definition
