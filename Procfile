@@ -1,1 +1,1 @@
-web: gunicorn ci-portfolio-project-5.wsgi:application
+web: gunicorn blueprint_web_designs.wsgi:application
