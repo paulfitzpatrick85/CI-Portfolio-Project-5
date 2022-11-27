@@ -1,10 +1,10 @@
 /*------------------base css----------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Maven+Pro&family=Montserrat&display=swap');
 footer{
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; */
     margin-top: 5%;
     width: 100%;
 }
@@ -14,8 +14,6 @@ footer{
     margin-right: 80px;
 }
 
-
-
 body {
     background: url('/media/blueprint-background-unsplash.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
     background-size: cover;                                                                  /*makes image stay in center of page*/
@@ -23,7 +21,16 @@ body {
     margin:0; 
     height:100%; 
     font-family: 'Maven Pro', sans-serif;
-}
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+      }
+      
+    main {
+    flex-grow: 1;
+    }
+
 
 .logo-font {
     text-align: center;
