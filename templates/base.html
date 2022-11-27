@@ -81,7 +81,7 @@
           <span class=" ">Logged in: {{ user }} </span>
               {% if request.user.is_superuser %}       <!--if logged in and superuser= link to manage store-->
               
-              <a href="" class="dropdown-item">Products</a>
+              <!-- <a href="" class="dropdown-item">Products</a> -->
               {% endif %}
             
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
