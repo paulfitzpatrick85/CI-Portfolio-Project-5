@@ -135,7 +135,7 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: url('/media/lightbulb.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
+	background: url('https://res.cloudinary.com/paulfitz85/image/upload/v1669572412/media/pp5-images/lightbulb_qwyjoi.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
     background-size: cover;     
 	z-index: -1;  
 }
