@@ -15,7 +15,7 @@ footer{
 }
 
 body {
-    background: url('/media/blueprint-background-unsplash.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
+    background: url('https://res.cloudinary.com/paulfitz85/image/upload/v1669572409/media/pp5-images/blueprint-background-unsplash_q1l6yr.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
     background-size: cover;                                                                  /*makes image stay in center of page*/
     padding:0; 
     margin:0; 
