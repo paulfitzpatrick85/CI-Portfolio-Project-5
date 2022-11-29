@@ -219,6 +219,9 @@ hr {
     border: 1px solid black;
 }
 
+.hide {
+    display: none;
+    }
 /*------------------cart-----------------------*/
 
 .overlay-white {
@@ -314,11 +317,6 @@ hr {
     }
 }
 
-@media (min-width: 754px) {
-.hide {
-    display: none;
-    }
-}
 
 @media (max-width: 390px) {
 .logo-font {
