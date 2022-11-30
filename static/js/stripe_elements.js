@@ -20,6 +20,7 @@ var style = {
     }
 };
 var card = elements.create('card', {style: style});
+console.log("card: ", card);
 card.mount('#card-element');
 
 
