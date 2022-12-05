@@ -139,6 +139,69 @@ The same applies when another user trys to delete a review left by someone else,
 
 ![not yours to delete message](https://user-images.githubusercontent.com/55660566/201522492-f03cae0d-5b8f-4c4b-a51a-6f198981ff2e.png)
 
+## Our Work Page
+Visitors to the site can view an exisiting body of work without the need to register or be signed in.
+The Our Work page displays images and info from the projects model in the 'ourwork' app.
+Users can view a large thumbnail of the home page of one of eight sites, each with a short description of the sites purpose, the coding languages used, and a link to the site itself.
+
+![ourwork](https://user-images.githubusercontent.com/55660566/205742427-1359dd40-df3a-4e28-beb7-04f577ef8ff5.png)
+
+
+## Contact and NewsLetter Sign Up Form
+
+Users can contact the site owner using the form on the 'Get In Touch' page. A user can fill in a short form: name, email and message in order to both subscribe to the sites newsletter and to enquire about potential collaboration.
+
+![contact](https://user-images.githubusercontent.com/55660566/205743232-f5f1e3e7-8ed5-445e-8db5-76b3e2ff6fe6.png)
+
+## Packages Page
+The Packages pages provides details of the products/web-dev packages available for purchase, the information is delivered to the site through the package model in /admin rather than a json file as used in the walkthrough project Boutique Ado. Users will see four different packages, each with their own unique title to somewhat describe them at a glance, along with a short description, the price excluding tax.
+
+![placeholder](https://user-images.githubusercontent.com/55660566/205745295-52af91b8-5cbf-4a15-8cb7-468e0f1c4516.jpg)----package page
+
+Clicking a package title or image will bring the user to the package detail page where a longer and more in depth description is displayed along with two buttons giving the option to add the package to their cart or return to the packages page.
+
+![placeholder](https://user-images.githubusercontent.com/55660566/205745295-52af91b8-5cbf-4a15-8cb7-468e0f1c4516.jpg) ---package detail
+
+If the user adds the item to their cart, a message will appear inform them the item is now in their cart.
+
+![added to cart](https://user-images.githubusercontent.com/55660566/205747826-c832986a-a43b-4c32-9c76-37bcabe0f03b.png)
+
+Given the nature of the product/packages for purchase, a user should have no reason to purchase more than one of the same tier package, so an attempt to add the same item twice, a message will be displayed informing the customer the package is already in their cart and it will not be added again.
+
+![already in cart](https://user-images.githubusercontent.com/55660566/205747827-55f97605-2bc9-4e7c-bc8b-38550a9ff615.png)
+
+If a user who is not registered or logged in navigates to the packages page, the button to add to cart will not be displayed. In its place the button will display text to the user that they must register/log in to add items, the button will bring the user to the sign in page.
+
+![log in to add item](https://user-images.githubusercontent.com/55660566/205748228-c44ccc48-93dc-4823-af8a-d724bc8027f8.png)
+
+
+
+## Cart and Checkout Pages
+
+To view user cart and its items, the user will navigate to the account icon at the top right of the page. If the user has no items added to the cart, the space at the bottom of the dropdown will appear blank, but when hovered over the amount/price of the users cart will be displayed.
+
+![empty cart not hovered](https://user-images.githubusercontent.com/55660566/205751620-f29377d3-3237-4988-b307-ea793e6da313.png)
+
+![empty cart  hover](https://user-images.githubusercontent.com/55660566/205751629-1f2d488c-bc9e-4b68-9a44-2806808ed12d.png)
+
+And when the cart does have items added the carts price will display in the dropdown without the need to hover over.
+
+![item in cart dropdown](https://user-images.githubusercontent.com/55660566/205751934-9847d015-6d39-42e1-b971-9cc1149156a0.png)
+
+The cart page, once items are added will display the chosen package title and its price, and the option to remove the item.
+A breakdown of the amount to be paid is shown above the 'proceed to payment' button.
+
+![cart](https://user-images.githubusercontent.com/55660566/205752861-06ff8401-6589-46f8-84ca-5804d065b132.png)
+
+If the user should remove all items in their cart, the page will display to the user that the cart is empty and a button to return to packages is made available.
+
+![cart emptied](https://user-images.githubusercontent.com/55660566/205752859-ac5b559f-e814-4617-9f5c-71812addaf87.png)
+
+If the user choses to proceed with payment they are taken to the checkout page, where are require to fill out a short form consisting of name, email, phonenumber, postcode along with a text area to input their credit card details.
+
+![checkout](https://user-images.githubusercontent.com/55660566/205752863-2319f4ce-48a2-4ff7-84fd-786fb0fdfb5f.png)
+
+
 
 ## User Story Testing
 
