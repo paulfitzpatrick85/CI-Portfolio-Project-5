@@ -213,6 +213,12 @@ If the user choses to proceed with payment they are taken to the checkout page, 
 + The users profile can be permanantly deleted from the database once they have confirmed deletion of the profile.
 
 
+## Bugs
+I had on going trouble with rendering #card-element/card number input box to render.
+After deployment the box would appear as a squashed manor with the following error, which my mentor, two tutor and also CI leads on slack could put their finger on the issue.
+
+After searching for similar issues online I found someone had the same issue. In this case the issue is thought  
+
 ## Code Validation
 ### Files for PEP8 validation checked through http://pep8online.com/
 Although Gitpod displayed errors in the terminal for code that was working as intended (the same errors that where seen is some of the walkthrough projects), these errors where not picked up by the pep8 validator. 
