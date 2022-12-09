@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from .models import OrderLineItem, Package_ordered
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from package.models import Package
 import json
 import time
@@ -11,6 +13,23 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+        """Send the user a confirmation email"""
+        cust_email = package_ordered.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'package_ordered': package_ordered})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'package_ordered': package_ordered, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )        
 
     def handle_event(self, event):
         """
