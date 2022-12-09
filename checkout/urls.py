@@ -2,7 +2,7 @@ from . import views
 from django.urls import path
 from django.conf import settings        
 from django.conf.urls.static import static  
-from .webhooks import webhook
+# from .webhooks import webhook
 
 urlpatterns = [
     path('checkout.html', views.checkout, name='checkout'),
