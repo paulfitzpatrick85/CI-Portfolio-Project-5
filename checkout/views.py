@@ -116,8 +116,8 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
-    package_order = get_object_or_404(Package_ordered, order_number=order_number)
-    _send_confirmation_email(package_ordered)
+    package_order = get_object_or_404(package_order, order_number=order_number)
+    _send_confirmation_email(package_order)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {package_order.customer_email}.')
