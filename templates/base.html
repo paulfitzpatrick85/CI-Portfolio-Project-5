@@ -78,6 +78,9 @@
         <div class="dropdown-menu border-0" aria-labelledby="user-options">
           
           {% if request.user.is_authenticated %}        <!--if registered =  display 'my profile and 'log out'-->
+          {% if request.user.is_superuser %}
+        <a href="https://ci-pp5-blueprint-webdesigns.herokuapp.com/admin" target="_blank" class="dropdown-item">Admin Panel</a>
+          {% endif %}
           <span class=" ">Logged in: {{ user }} </span>
               {% if request.user.is_superuser %}       <!--if logged in and superuser= link to manage store-->
               
