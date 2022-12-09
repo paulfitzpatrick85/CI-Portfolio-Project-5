@@ -117,7 +117,7 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     package_order = get_object_or_404(Package_ordered, order_number=order_number)
-    # _send_confirmation_email(package_order)
+    _send_confirmation_email(package_order)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {package_order.customer_email}.')
@@ -133,19 +133,19 @@ def checkout_success(request, order_number):
     return render(request, template, context)
 
 
-# def _send_confirmation_email(package_order):
-#         """Send the user a confirmation email"""
-#         cust_email = package_ordered.customer_email
-#         subject = render_to_string(
-#             'checkout/confirmation_emails/confirmation_email_subject.txt',
-#             {'package_order': package_order})
-#         body = render_to_string(
-#             'checkout/confirmation_emails/confirmation_email_body.txt',
-#             {'package_order': package_order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+def _send_confirmation_email(package_order):
+        """Send the user a confirmation email"""
+        cust_email = package_ordered.customer_email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'package_order': package_order})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'package_order': package_order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
         
-#         send_mail(
-#             subject,
-#             body,
-#             settings.DEFAULT_FROM_EMAIL,
-#             [cust_email]
-#         )        
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )        
