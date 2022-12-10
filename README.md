@@ -197,9 +197,15 @@ If the user should remove all items in their cart, the page will display to the 
 
 ![cart emptied](https://user-images.githubusercontent.com/55660566/205752859-ac5b559f-e814-4617-9f5c-71812addaf87.png)
 
+If an admin is logged in, an extra option will be available in the dropdown to access the admin panel in a new window.
+
+![dropdown admin option](https://user-images.githubusercontent.com/55660566/206844061-9c0e5d77-a46e-4210-94ff-1b40df2c2b62.png)
+
+
 If the user choses to proceed with payment they are taken to the checkout page, where are require to fill out a short form consisting of name, email, phonenumber, postcode along with a text area to input their credit card details.
 
 ![checkout](https://user-images.githubusercontent.com/55660566/205752863-2319f4ce-48a2-4ff7-84fd-786fb0fdfb5f.png)
+
 
 
 
