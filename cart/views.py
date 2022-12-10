@@ -3,7 +3,7 @@ from django.views import generic, View
 # from .models import Package
 from django.contrib import messages
 from package.models import Package
-from django.views.decorators.csrf import csrf_exempt, csrf_protect 
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
 
 # Create your views here.
 
@@ -15,8 +15,7 @@ def view_cart(request):
 
 
 def add_to_cart(request, item_id):
-    """ Add a quantity of the specified product to the cart """
-    
+    """ Add a quantity of the specified product to the cart """  
     package = Package.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -26,7 +25,8 @@ def add_to_cart(request, item_id):
         messages.success(request, f'{package.name} is already in your cart')
     else:
         cart[item_id] = quantity
-        messages.success(request, f'{package.name} has been added to your cart')
+        messages.success(request, f'{package.name} \
+        has been added to your cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)

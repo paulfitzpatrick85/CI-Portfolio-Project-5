@@ -8,4 +8,3 @@ class ReviewForm(forms.ModelForm):
         fields = ('customer_name',
                   'customer_email',
                   'customer_review',)
-                  

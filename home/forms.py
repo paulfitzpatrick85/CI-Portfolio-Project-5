@@ -8,4 +8,3 @@ class SubscribeForm(forms.ModelForm):
         fields = ('name',
                   'email',
                   'message',)
-                  

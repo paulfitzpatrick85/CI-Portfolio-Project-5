@@ -6,16 +6,15 @@
 <div class="overlay"></div>
 <div class="package-div">
     <div>
-    <h1>is this package for you?</h1>
+        <h1>is this package for you?</h1>
         <div>
-            
             <a href="{{ package.image.url }}" target="_blank">
                 <img class="package-detail-img" src="{{ package.image.url }}" alt="{{ package.name }}">
             </a>
-            <h3 class="mt-2">{{ package.name }}</h3>  
-            <p class="project-description">Price: €{{ package.price }} (ex. tax)</p> 
+            <h3 class="mt-2">{{ package.name }}</h3>
+            <p class="project-description">Price: €{{ package.price }} (ex. tax)</p>
         </div>
-       
+
         <div>
             <p class="project-description"><i>{{ package.full_description }}</i></p>
 
@@ -27,10 +26,11 @@
                         <p class="mt-3"><strong>Quantity:</strong></p>
                         <div class="form-group w-50">
                             <div class="input-group">
-                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ package.id }}" id="id_qty_{{ package.id }}">
+                                <input class="form-control qty_input" type="number" name="quantity" value="1" min="1"
+                                    max="99" data-item_id="{{ package.id }}" id="id_qty_{{ package.id }}">
                             </div>
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="col-12">
                     <a href="{% url 'all_packages' %}" class="btn btn-signup">
@@ -43,20 +43,15 @@
                     <input type="submit" class="btn btn-signup" value="Add to cart">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     {% else %}
-    
-                    <a class="btn btn-signup" href="{% url 'account_login' %}">You must register/log in to add items to your cart</a>
+
+                    <a class="btn btn-signup" href="{% url 'account_login' %}">You must register/log in to add items to
+                        your cart</a>
                     {% endif %}
                 </div>
-                
             </form>
         </div>
-        
     </div>
-
 </div>
-
-
-
 </div>
 
 {% endblock %}

@@ -8,12 +8,9 @@ setTimeout(function() {
 // from b/a + changed
 // Remove item and reload on click
 $('.remove-item').click(function(e) {
-    // var csrfToken = "{{ csrf_token }}";
     var itemId = $(this).attr('id')
     var url = `/remove/${itemId}/`;     
-    // var data = {'csrfmiddlewaretoken': csrfToken};
-
-    $.post(url)   // $.post(url, data)
+    $.post(url)   
      .done(function() {
          location.reload();
      });

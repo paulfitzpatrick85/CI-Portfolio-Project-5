@@ -7,6 +7,3 @@ from .models import Package
 class PackageAdmin(admin.ModelAdmin):
     list_display = ('name', 'short_description', 'price', 'image', )
     ordering = ('name',)
-
-
-
