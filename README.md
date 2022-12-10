@@ -202,9 +202,10 @@ If an admin is logged in, an extra option will be available in the dropdown to a
 ![dropdown admin option](https://user-images.githubusercontent.com/55660566/206844061-9c0e5d77-a46e-4210-94ff-1b40df2c2b62.png)
 
 
-If the user choses to proceed with payment they are taken to the checkout page, where are require to fill out a short form consisting of name, email, phonenumber, postcode along with a text area to input their credit card details.
+If the user choses to proceed with payment they are taken to the checkout page, where are require to fill out a short form consisting of name, email, phonenumber which are required, and postcode along with a text area to input their credit card details.
 
-![checkout](https://user-images.githubusercontent.com/55660566/205752863-2319f4ce-48a2-4ff7-84fd-786fb0fdfb5f.png)
+![checkout1](https://user-images.githubusercontent.com/55660566/206849837-8e7c1fe5-2bb0-48df-8382-9cf078f9f23b.png)
+
 
 
 

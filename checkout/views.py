@@ -42,39 +42,41 @@ def checkout(request):
             'phone_number': request.POST['phone_number'],
             'postcode': request.POST['postcode'],
         }
-        order_form = PackageOrderedForm(form_data)
-        if order_form.is_valid():
-            package_order = order_form.save(commit=False)
-            pid = request.POST.get('client_secret').split('_secret')[0]
-            Package_ordered.stripe_pid = pid
-            Package_ordered.original_cart = json.dumps(cart)
-            package_order.save()
-            for item_id, item_data in cart.items():
-                try:
-                    package = Package.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            package_order=package_order,
-                            package=package,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
-                    else:
-                        order_line_item.save()
-                except Package.DoesNotExist:
-                    messages.error(request, (
-                        "One of the packages in your cart wasn't found in our database. "
-                        "Please call us for assistance!")
-                    )
-                    package_order.delete()
-                    return redirect(reverse('view_cart'))
-
-            # request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[package_order.order_number]))
-        else:
-            messages.error(request, 'There was an error with your form. \
+        if package_ordered().customer_email != request.user.email:
+             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
-    else:
+        else:
+            order_form = PackageOrderedForm(form_data)
+            if order_form.is_valid():
+                package_order = order_form.save(commit=False)
+                pid = request.POST.get('client_secret').split('_secret')[0]
+                Package_ordered.stripe_pid = pid
+                Package_ordered.original_cart = json.dumps(cart)
+                package_order.save()
+                for item_id, item_data in cart.items():
+                    try:
+                        package = Package.objects.get(id=item_id)
+                        if isinstance(item_data, int):
+                            order_line_item = OrderLineItem(
+                                package_order=package_order,
+                                package=package,
+                                quantity=item_data,
+                            )
+                            order_line_item.save()
+                        else:
+                            order_line_item.save()
+                    except Package.DoesNotExist:
+                        messages.error(request, (
+                            "One of the packages in your cart wasn't found in our database. "
+                            "Please call us for assistance!")
+                        )
+                        package_order.delete()
+                        return redirect(reverse('view_cart'))
+
+                # request.session['save_info'] = 'save-info' in request.POST ###############uncommented 10/12 so may need deleting
+                return redirect(reverse('checkout_success', args=[package_order.order_number]))
+        
+    else:             #######################################################
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(request, "There's nothing in your cart at the moment")
@@ -132,8 +134,6 @@ def checkout_success(request, order_number):
     }
     
     return render(request, template, context)
-
-
 # def _send_confirmation_email(package_order):
 #         """Send the user a confirmation email"""
 #         cust_email = package_ordered.customer_email
