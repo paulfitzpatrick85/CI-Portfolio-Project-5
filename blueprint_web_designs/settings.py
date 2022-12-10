@@ -9,8 +9,6 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-# if os.path.isfile('env.py'):  # for when heroku is setup
-#     import env
 
 from pathlib import Path
 import os
@@ -29,13 +27,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
-
 DEBUG = False
 ALLOWED_HOSTS = ['ci-pp5-blueprint-webdesigns.herokuapp.com', 'localhost']
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -58,7 +53,6 @@ INSTALLED_APPS = [
     'checkout',
     'storages', 
 ]
-
 
 LOGIN_REDIRECT_URL = '/'   
 LOGOUT_REDIRECT_URL = '/'
