@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse  
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .forms import PackageOrderedForm
@@ -68,6 +68,7 @@ def checkout(request):
                     package_order.delete()
                     return redirect(reverse('view_cart'))
 
+            # request.session['save_info'] = 'save-info' in request.POST #uncommented 10/12 so may need deleting
             return redirect(reverse('checkout_success',
                             args=[package_order.order_number]))
         else:
@@ -118,7 +119,10 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
-    package_order = get_object_or_404(Package_ordered, order_number=order_number)
+    package_order = get_object_or_404(Package_ordered, 
+                                      order_number=order_number)
+    # _send_confirmation_email(package_order)
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. We will \
         be in touch soon to discuss your new site!')
@@ -130,5 +134,3 @@ def checkout_success(request, order_number):
     context = {
         'package_order': package_order,
     }
-    
-    return render(request, template, context)

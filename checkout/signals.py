@@ -16,6 +16,7 @@ def update_on_save(sender, instance, created, **kwargs):
 def update_on_delete(sender, instance, **kwargs):
     """
     Update order total on lineitem delete
-    """  
+    """
+    
     # instance.package_ordered.update_total()
     instance.package_order.update_total()
