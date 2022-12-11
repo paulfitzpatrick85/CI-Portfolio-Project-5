@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import HttpResponse  # added here as line too long above
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .forms import PackageOrderedForm
@@ -68,7 +69,6 @@ def checkout(request):
                     package_order.delete()
                     return redirect(reverse('view_cart'))
 
-            # request.session['save_info'] = 'save-info' in request.POST #uncommented 10/12 so may need deleting
             return redirect(reverse('checkout_success',
                             args=[package_order.order_number]))
         else:
@@ -136,19 +136,3 @@ def checkout_success(request, order_number):
     }
     
     return render(request, template, context)
-# def _send_confirmation_email(package_order):
-#         """Send the user a confirmation email"""
-#         cust_email = package_ordered.customer_email
-#         subject = render_to_string(
-#             'checkout/confirmation_emails/confirmation_email_subject.txt',
-#             {'package_order': package_order})
-#         body = render_to_string(
-#             'checkout/confirmation_emails/confirmation_email_body.txt',
-#             {'package_order': package_order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
-#         send_mail(
-#             subject,
-#             body,
-#             settings.DEFAULT_FROM_EMAIL,
-#             [cust_email]
-#         )        

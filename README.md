@@ -222,38 +222,68 @@ Webhooks are not used as I continued to get an 404 error telling me the url chec
 
 
 ## Code Validation
-### Files for PEP8 validation checked through http://pep8online.com/
-All files passed without errors, with some only displaying a warning of 'no new line at end of file', which when a new line is added only creates new warnings of 'blank line at end of file', the other warning being 'trailing whitespace', which for some reason in only a few files, which I 'backspace' the whitespace, the warning would not clear, so the files where left with these warnings.
-
-Any other warnings that occured in individual files are mentioned below their image.
+### Files for PEP8 validation checked through code institues own checker - https://pep8ci.herokuapp.com/
+All files passed without errors, with some only displaying a warning of 'no new line at end of file', which when a new line is added only creates new warnings in the terminal of 'blank line at end of file', the other warnings being 'trailing whitespace', which for some reason in only a few files, which I 'backspace' the whitespace, the warning would not clear, so the files where left with these warnings.
 
 
+----------python images-------------------
+----------python images-------------------
+----------python images-------------------
+----------python images-------------------
+----------python images-------------------
+----------python images-------------------
+----------python images-------------------
+----------python images-------------------
+----------python images-------------------
+----------python images-------------------
 
+
+Checkout/models.py is the only file which an error shows in the terminal for a 'line too long' even after the line is slpit, when passed through CI's checker, the error is not picked up so the code is left as is. 
+
+-----------Checkout/models.py-------------------
 
 
 ## HTML validation
 
 HTML validated at https://validator.w3.org/
 
+All pages passed without errors.
+
+![cart](https://user-images.githubusercontent.com/55660566/206921739-0570bdc5-82d6-4db8-a054-cb097b364a41.png)
+![checkout](https://user-images.githubusercontent.com/55660566/206921741-e7221424-5b06-4e17-941f-02775f58e51e.png)
+![checkout_success_payment_made](https://user-images.githubusercontent.com/55660566/206921742-6134eafa-24d3-49a0-8920-bebf0e50e6bf.png)
+![homepage](https://user-images.githubusercontent.com/55660566/206921743-a010687b-9fcc-40db-bd4c-7eff506208c1.png)
+![packages](https://user-images.githubusercontent.com/55660566/206921745-0b263727-33c9-41eb-9709-5a8a9e7cbc20.png)
+![projects](https://user-images.githubusercontent.com/55660566/206921747-3597fc8b-87da-406d-be44-a01d780ff30e.png)
+![reviews](https://user-images.githubusercontent.com/55660566/206921748-e9215dad-1a8f-436b-b005-069100a51363.png)
+![subscribe](https://user-images.githubusercontent.com/55660566/206921749-247f7f4d-2256-409a-9d83-f770adca5e19.png)
 
 
-The above url (https://ci-pp4-unsigned-ireland.herokuapp.com/Instrumental/) tests the same code for /metal, /rock, /pop etc.
 
 ## CSS validation
 Css validated with jigsaw W3C CSS Validator
 
+css checked through direct input with no errors
+
+![val css](https://user-images.githubusercontent.com/55660566/206921806-0973a366-e01b-4935-991f-10579fae7289.png)
 
 
 
 ## Javascript validation 
 validated at https://jshint.com/
 
-![js test](https://user-images.githubusercontent.com/55660566/187523340-c8a9f252-327e-43f3-af4b-33efffac2efc.png)
+Javascript files passed with only warnings relating to es6, which I was told by mentor during pp4, are ok to have.
+
+![js](https://user-images.githubusercontent.com/55660566/206922122-e94430eb-dda8-4f2a-ac24-c2b7d76403e6.png)
+![js-stripe](https://user-images.githubusercontent.com/55660566/206922125-ce11441f-09d3-43e4-ba12-54c2e3dbb2df.png)
+
+
+
 
 ## Accessibility
-I tested the sites accessibility through lighthouse
+I tested the sites accessibility through lighthouse.
 
---lighthouse image---
+![lighthouse](https://user-images.githubusercontent.com/55660566/206921804-0c9d10ea-e08a-4ffa-9321-b0f028756fe3.png)
 
 
 ## Responsiveness

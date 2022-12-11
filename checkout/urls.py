@@ -1,7 +1,7 @@
 from . import views
 from django.urls import path
-from django.conf import settings        
-from django.conf.urls.static import static  
+from django.conf import settings   
+from django.conf.urls.static import static
 # from .webhooks import webhook
 
 urlpatterns = [
@@ -12,4 +12,3 @@ urlpatterns = [
          name='cache_checkout_data'),
     # path('wh/', webhook, name='webhook'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
