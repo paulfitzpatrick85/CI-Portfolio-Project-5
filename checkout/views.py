@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.shortcuts import HttpResponse  # added here as line too long above
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse  
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .forms import PackageOrderedForm
@@ -119,10 +118,7 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
-    package_order = get_object_or_404(Package_ordered, 
-                                      order_number=order_number)
-    # _send_confirmation_email(package_order)
-
+    package_order = get_object_or_404(Package_ordered, order_number=order_number)
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. We will \
         be in touch soon to discuss your new site!')

@@ -13,15 +13,11 @@ class Package_ordered(models.Model):
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)
-    order_tax = models.DecimalField(max_digits=10, decimal_places=2, 
-                                    null=False, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, 
-                                      null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, 
-                                      null=False, default=0)
+    order_tax = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, 
-                                  null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     def _generate_order_number(self):
         """
@@ -74,5 +70,4 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Package {self.package.name} on \
-             order{self.package_order.order_number}'
+        return f'Package {self.package.name} on order{self.package_order.order_number}'

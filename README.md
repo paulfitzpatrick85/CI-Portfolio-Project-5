@@ -243,6 +243,8 @@ Checkout/models.py is the only file which an error shows in the terminal for a '
 
 -----------Checkout/models.py-------------------
 
+settings.py shows error for 'line too long' but these are the 'AUTH_PASSWORD_VALIDATORS' which I was told for tutors on slack as it's not our(students) own code this can be ignored
+
 
 ## HTML validation
 
