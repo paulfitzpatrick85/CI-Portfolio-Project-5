@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
 from django.views import generic, View
-# from .models import Package
 from django.contrib import messages
 from package.models import Package
 from django.views.decorators.csrf import csrf_exempt, csrf_protect
