@@ -7,8 +7,9 @@
 <div class="overlay-lightbulb"></div>
 <div>
     <form class="all-forms-2 bg-transparent" enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
-        <h3>Got an idea for a site or new venture?
-            <hr> Get In Touch With Our Developers and Subscribe to our newsletter<i class="fa fa-arrow-down"></i></h3>
+        <h3>Got an idea for a site or new venture?</h3>
+            <hr>
+        <h3>Get In Touch With Our Developers and Subscribe to our newsletter<i class="fa fa-arrow-down"></i></h3>
         {{ form | crispy }}
         {% csrf_token %}
         <button type="submit" class="btn btn-signup btn-lg">Send message</button>

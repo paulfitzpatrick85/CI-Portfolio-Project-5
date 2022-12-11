@@ -207,43 +207,27 @@ If the user choses to proceed with payment they are taken to the checkout page, 
 ![checkout1](https://user-images.githubusercontent.com/55660566/206849837-8e7c1fe5-2bb0-48df-8382-9cf078f9f23b.png)
 
 
-
-
-
 ## User Story Testing
 
-+ The site is made and layed out in a way that is easy to use and does not bombard the user with too many or needless details.
-+ The login/ log out status messages are displayed cleary and the user is made aware they are logged in at the top right of the screen on all pages. 
-+ Adding a profile is made easy with a large button prompting the user to the form to input their details on their genre page of choice.
-+ Uploading an image is made easy in that the user does not need to worry about the size of the image they upload, as it will automatically be set to a percentage in relation to the screen size the site is being viewed on.
-+ The user can easily add a band profile in their chosen genre using the add band form, which can be easily and immediately edited once approved.
-+ The users profile can be permanantly deleted from the database once they have confirmed deletion of the profile.
++ The site is made and layed out in a way that is easy to use and does not bombard the user with too many or needless details. 
++ Registering for an account with the website in easy and login/ log out status and messages are displayed cleary and the user is made aware they are logged in or out by clciking the account icon
++ Packages available to purchase along with their price and other details are displayed in a clear manner.
++ Users can add and remove packages from their cart easily.
++ Users can sign up to a news letter and attached a message to the site owner.
++ Users Can leave reviews of the service, which can later be edited or deleted.
 
 
 ## Bugs
+Webhooks are not used as I continued to get an 404 error telling me the url checkout/wh/ could not be found. I ran this problem through two tutors and my mentor and still could not solve the issue.
 
 
 ## Code Validation
 ### Files for PEP8 validation checked through http://pep8online.com/
-Although Gitpod displayed errors in the terminal for code that was working as intended (the same errors that where seen is some of the walkthrough projects), these errors where not picked up by the pep8 validator. 
-Although I did attempt to remove/edit the code which was underlined in red, this only resulted in errors and the website not functioning.  
-All files passed without errors with only a warning 'no new line at end of file', which when a new line is added only creates new warnings of 'blank line at end of file' and 'blank line contains whitespace', so all files where left with this one warning of no new line.
+All files passed without errors, with some only displaying a warning of 'no new line at end of file', which when a new line is added only creates new warnings of 'blank line at end of file', the other warning being 'trailing whitespace', which for some reason in only a few files, which I 'backspace' the whitespace, the warning would not clear, so the files where left with these warnings.
 
 Any other warnings that occured in individual files are mentioned below their image.
 
-+ admin.py
 
-+ forms.py
-
-+ models.py
-
-+ genres - urls.py
-
-+ views.py
-
-This file displayed a number of warnings regarding 'trailing whitespace', though it seems to be the white space left by the indentation that is being picked up, so any attempt to resolve the warnings only results in incorrect indentation and produces legitimate errors, so the code was left as is.
-
-+ unsigned ireland - urls.py
 
 
 

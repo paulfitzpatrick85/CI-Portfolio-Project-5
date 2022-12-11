@@ -74,8 +74,9 @@
                   class="hide-pipe">&nbsp;&nbsp;|</span></a>
             </li>
           </ul>
-
+          
           <!--account dropdown menu-->
+          <ul>
           <li class="list-inline-item dropdown">
             <!--data-toggle links to bs js to open dropdown-->
             <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
@@ -113,6 +114,7 @@
               <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
               {% endif %}
             </div>
+          </ul>
         </div>
       </nav>
 
@@ -132,7 +134,7 @@
         {% endblock %}
       </main>
 
-      <!----footer----->
+      <!--footer-->
       <footer class="py-2 page-footer font-small darken-3 bg-dark text-white footer mt-auto ">
         <div class="container text-center">
           <div class="row">
@@ -150,7 +152,7 @@
             </div>
             <div class="col">
               <!--Github -->
-              <a a href="https://github.com/paulfitzpatrick85" target="_blank" class="li-ic">
+              <a href="https://github.com/paulfitzpatrick85" target="_blank" class="li-ic">
                 <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
               </a>
             </div>
