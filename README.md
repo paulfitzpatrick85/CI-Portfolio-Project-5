@@ -9,7 +9,8 @@ BluePrint WebDesigns is an online service for users to purchase four different l
 
 You can view the live site here ----deployed link-----
 
------am i responsive image-------
+![amiresponsive](https://user-images.githubusercontent.com/55660566/206925022-9e51cb4f-fe6c-43de-ac24-3c089ac3887a.png)
+
 
 ## User Storys
 + Github UserStories URL: https://github.com/users/paulfitzpatrick85/projects/11?add_cards_query=is%3Aopen
@@ -287,7 +288,7 @@ I tested the sites accessibility through lighthouse.
 
 
 ## Responsiveness
-The site is designed to be used on devices as small as 300px.
+The site is designed to be used on devices as small as 320px.
 
 ## Mockup Images
 
