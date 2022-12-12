@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import HttpResponse  # line above too long
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .forms import PackageOrderedForm
@@ -74,12 +75,15 @@ def checkout(request):
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(request, "There's nothing in \
+                                     your cart at the moment")
             return redirect(reverse('all_packages'))
 
     cart = request.session.get('cart', {})    
     if not cart:
-        messages.error(request, "Your cart is empty" "Return to the Product Packages page to add to your cart")
+        messages.error(request, "Your cart is empty, \
+                                Return to the Product Packages \
+                                page to add to your cart")
         return redirect(reverse('packages'))  
 
     current_cart = cart_contents(request)

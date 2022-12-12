@@ -34,7 +34,9 @@ class Package_ordered(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        # self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.order_total = self.lineitems.aggregate(
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.order_tax = (self.order_total / 100) * 23 
         self.grand_total = self.order_total + self.order_tax 
         
@@ -73,4 +75,5 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Package {self.package.name} on order {self.package_order.order_number}'
+        return f'Package {self.package.name} on order \
+                         {self.package_order.order_number}'
