@@ -10,13 +10,15 @@ import stripe
 import json
 
 
+# package_ordered
+
 @require_POST
 def cache_checkout_data(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
-            'cart': json.dumps(request.session.get('cart', {})),
+            'cart': json.dumps(request.session.get('cart', {})),  # may be not used
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
@@ -29,7 +31,7 @@ def cache_checkout_data(request):
     
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY  
+    stripe_secret_key = settings.STRIPE_SECRET_KEY    ##################
 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
@@ -61,31 +63,26 @@ def checkout(request):
                         order_line_item.save()
                 except Package.DoesNotExist:
                     messages.error(request, (
-                        "One of the packages in your cart \
-                         wasn't found in our database. "
+                        "One of the packages in your cart wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     package_order.delete()
                     return redirect(reverse('view_cart'))
 
-            # request.session['save_info'] = 'save-info' in request.POST #uncommented 10/12 so may need deleting
-            return redirect(reverse('checkout_success',
-                            args=[package_order.order_number]))
+            # request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_success', args=[package_order.order_number]))
         else:
-        
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         cart = request.session.get('cart', {})
         if not cart:
-            messages.error(request, "There's nothing in \
-                                     your cart at the moment")
+            messages.error(request, "There's nothing in your cart at the moment")
             return redirect(reverse('all_packages'))
 
-    cart = request.session.get('cart', {})
+    cart = request.session.get('cart', {})    #####################
     if not cart:
-        messages.error(request, "Your cart is empty" "Return to the \
-                                 Product Packages page to add to your cart")
+        messages.error(request, "Your cart is empty" "Return to the Product Packages page to add to your cart")
         return redirect(reverse('packages'))  
 
     current_cart = cart_contents(request)
@@ -119,8 +116,7 @@ def checkout_success(request, order_number):
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
-    package_order = get_object_or_404(Package_ordered, 
-                                      order_number=order_number)
+    package_order = get_object_or_404(Package_ordered, order_number=order_number)
     # _send_confirmation_email(package_order)
 
     messages.success(request, f'Order successfully processed! \
@@ -134,3 +130,23 @@ def checkout_success(request, order_number):
     context = {
         'package_order': package_order,
     }
+    
+    return render(request, template, context)
+
+
+# def _send_confirmation_email(package_order):
+#         """Send the user a confirmation email"""
+#         cust_email = package_ordered.customer_email
+#         subject = render_to_string(
+#             'checkout/confirmation_emails/confirmation_email_subject.txt',
+#             {'package_order': package_order})
+#         body = render_to_string(
+#             'checkout/confirmation_emails/confirmation_email_body.txt',
+#             {'package_order': package_order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        
+#         send_mail(
+#             subject,
+#             body,
+#             settings.DEFAULT_FROM_EMAIL,
+#             [cust_email]
+#         )        
