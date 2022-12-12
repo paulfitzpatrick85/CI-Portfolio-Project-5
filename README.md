@@ -203,10 +203,28 @@ If an admin is logged in, an extra option will be available in the dropdown to a
 ![dropdown admin option](https://user-images.githubusercontent.com/55660566/206844061-9c0e5d77-a46e-4210-94ff-1b40df2c2b62.png)
 
 
-If the user choses to proceed with payment they are taken to the checkout page, where are require to fill out a short form consisting of name, email, phonenumber which are required, and postcode along with a text area to input their credit card details.
+If the user choses to proceed with payment they are taken to the checkout page, where are require to fill out a short form consisting of name, email, phone number which are required, and postcode along with a text area to input their credit card details.
 
 ![checkout1](https://user-images.githubusercontent.com/55660566/206849837-8e7c1fe5-2bb0-48df-8382-9cf078f9f23b.png)
 
+When the payment is processed, the user is brought to the checkout success page which displays and order summary including their order number.
+
+
+![checkout success page](https://user-images.githubusercontent.com/55660566/207132810-061e41ab-4e8a-4bc7-88c3-120b4c3b99ff.png)
+
+
+A message is also displayed temporarily informing the user the order was taken successfully.
+
+![order message](https://user-images.githubusercontent.com/55660566/207132767-0250f03a-46cf-4b74-8f9c-f3c0ee357a32.png)
+
+Should the processing of an order fail, a message is displayed to the user informing them.
+
+![process error](https://user-images.githubusercontent.com/55660566/207133580-9c8093de-77b8-48d2-8efd-c2573d5d8421.png)
+
+
+When the card number '4000002500003155 42/42 424 2424' is used the follow authentication model is displayed to the user to authenticate their order payment.
+
+![auth modal](https://user-images.githubusercontent.com/55660566/207136021-0c127919-ef1b-4fa1-88fd-6f04eab9044b.png)
 
 ## User Story Testing
 
@@ -369,27 +387,12 @@ views.py
 
 ![r view](https://user-images.githubusercontent.com/55660566/207128471-cb85d99b-2990-4896-9c08-8f1a5547ccdb.png)
 
-
-----------python images-------------------
-----------python images-------------------
-----------python images-------------------
-----------python images-------------------
-----------python images-------------------
-----------python images-------------------
-----------python images-------------------
-----------python images-------------------
-----------python images-------------------
-----------python images-------------------
-
-
-Checkout/models.py is the only file which an error shows in the terminal for a 'line too long' even after the line is slpit, when passed through CI's checker, the error is not picked up so the code is left as is. 
+Checkout/models.py is the only file which an error shows in the terminal for a 'line too long' even after the line is split, when passed through CI's checker, the error is not picked up so the code is left as is. 
 
 ![checkout models ci linter](https://user-images.githubusercontent.com/55660566/207109911-02d9cd88-7877-4191-91bd-d00d569dfa42.png)
 ![checkout models](https://user-images.githubusercontent.com/55660566/207109916-c15d626a-1715-4428-8625-eeeb57d69465.png)
 
-
-
-settings.py shows error for 'line too long' but these are the 'AUTH_PASSWORD_VALIDATORS' which I was told by tutors/leads on slack that as it's not our(students) own code this can be ignored.
+settings.py shows error for 'line too long' but these are the 'AUTH_PASSWORD_VALIDATORS', which I was told by tutors/leads on slack that as it's not our(students) own code this can be ignored.
 
 
 ## HTML validation
