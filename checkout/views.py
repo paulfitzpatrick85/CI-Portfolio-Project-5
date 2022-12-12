@@ -4,7 +4,7 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .forms import PackageOrderedForm
 from package.models import Package
-from .models import Package_ordered, OrderLineItem  
+from .models import Package_ordered, OrderLineItem
 from cart.contexts import cart_contents
 from django.conf import settings
 import stripe
@@ -30,7 +30,7 @@ def cache_checkout_data(request):
     
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY    
+    stripe_secret_key = settings.STRIPE_SECRET_KEY 
     if request.method == 'POST':
         cart = request.session.get('cart', {})
 
@@ -61,7 +61,8 @@ def checkout(request):
                         order_line_item.save()
                 except Package.DoesNotExist:
                     messages.error(request, (
-                        "One of the packages in your cart wasn't found in our database. "
+                        "One of the packages in your cart \
+                         wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     package_order.delete()

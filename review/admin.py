@@ -11,5 +11,3 @@ class ReviewAdmin(admin.ModelAdmin):
 
     def approve_review(self, request, queryset):
         queryset.update(approved=True)
-
-    

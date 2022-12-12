@@ -226,6 +226,149 @@ Webhooks are not used as I continued to get an 404 error telling me the url chec
 ### Files for PEP8 validation checked through code institues own checker - https://pep8ci.herokuapp.com/
 All files passed without errors, with some only displaying a warning of 'no new line at end of file', which when a new line is added only creates new warnings in the terminal of 'blank line at end of file', the other warnings being 'trailing whitespace', which for some reason in only a few files, which I 'backspace' the whitespace, the warning would not clear, so the files where left with these warnings.
 
++ CART APP
+
+apps.py
+
+![cart apps](https://user-images.githubusercontent.com/55660566/207112880-19ee4fba-5666-4a2e-8494-b54d968fedd4.png)
+
+contexts.py
+
+![cart contexts](https://user-images.githubusercontent.com/55660566/207112881-1f619f0e-db3e-463a-afc9-ed4edacfa61e.png)
+
+![cart context](https://user-images.githubusercontent.com/55660566/207112019-bf2c8f11-2bf9-4875-a579-f963894fde3b.png)
+
+urls.py
+
+![cart urls](https://user-images.githubusercontent.com/55660566/207112023-a44c5be6-5ccf-4a0e-8501-abe4f502926c.png)
+
+views.py
+
+![cart view](https://user-images.githubusercontent.com/55660566/207112025-939fe339-2c90-460b-90ce-53dcb5b9afb3.png)
+
++ CHECKOUT APP
+
+admin.py
+
+![checkout admin](https://user-images.githubusercontent.com/55660566/207113636-4bbac11d-c94f-4489-ac85-667555f8c0a6.png)
+
+apps.py
+
+![checkout app](https://user-images.githubusercontent.com/55660566/207113657-f9e11011-0dfb-4cbd-8bf5-ab9080fc4977.png)
+
+forms.py
+
+![checkout forms](https://user-images.githubusercontent.com/55660566/207115170-77e42b53-bfd0-4e66-b95c-23028a220faf.png)
+
+signals.py
+
+![checkout signals](https://user-images.githubusercontent.com/55660566/207115174-e845f972-627c-4715-970f-aae723a6b4dd.png)
+
+urls.py
+
+![checkout urls](https://user-images.githubusercontent.com/55660566/207115177-240b4214-1e22-4fd5-abaf-01bab1828ab6.png)
+
+views.py
+
+![checkout views](https://user-images.githubusercontent.com/55660566/207115179-f6779f14-a5ee-44ee-ba9f-a6f640587ba4.png)
+
++ HOME APP
+
+admin.py
+
+![home admin](https://user-images.githubusercontent.com/55660566/207117538-04f453e9-c164-4941-a3b7-7e4a83ba9991.png)
+
+apps.py
+
+![home apps](https://user-images.githubusercontent.com/55660566/207117543-7f1a7314-b6a7-4a2c-9be3-17e38ca4fadc.png)
+
+models.py
+
+![home models](https://user-images.githubusercontent.com/55660566/207117544-f38498e6-3e97-4bef-a6a0-8c3edacdc474.png)
+
+urls.py
+
+![home urls](https://user-images.githubusercontent.com/55660566/207117546-73a37b51-3550-4f10-b36a-321153a8de39.png)
+
+views.py
+
+![home views](https://user-images.githubusercontent.com/55660566/207117547-1a9104f3-b0eb-44bf-8c71-ed1edea56008.png)
+
+forms.py
+
+![homoe forms](https://user-images.githubusercontent.com/55660566/207117549-c3776bdd-2cf6-4bef-b190-e8bbf32ecfff.png)
+
++ OURWORK APP
+
+admin.py
+
+![ow admin](https://user-images.githubusercontent.com/55660566/207119387-8258d190-c790-4e03-8c56-9fa73f56c42b.png)
+
+apps.py
+
+![ow apps](https://user-images.githubusercontent.com/55660566/207119390-4a55dcac-edef-4b41-b305-e4bec9385313.png)
+
+models.py
+
+![ow models](https://user-images.githubusercontent.com/55660566/207119392-65df8538-429f-469c-87a5-b9ad101d7b75.png)
+
+urls.py
+
+![ow urls](https://user-images.githubusercontent.com/55660566/207119393-924d0d17-8cab-4de8-986e-3540b9230dc9.png)
+
+views.py
+
+![ow views](https://user-images.githubusercontent.com/55660566/207119397-1ba9490d-2a3c-44d1-811e-12ecf8efcc09.png)
+
+
++ PACKAGES APP
+
+admin.py
+
+![p admin](https://user-images.githubusercontent.com/55660566/207122572-f746e067-46ab-4f3d-8bf9-575691b03d8b.png)
+
+apps.py
+
+![p apps](https://user-images.githubusercontent.com/55660566/207122576-981bc908-67f4-48a9-bb53-318ecd48da13.png)
+
+models.py
+
+![p models](https://user-images.githubusercontent.com/55660566/207122577-dc7e5210-dacc-4d82-9a63-9d82080abf1c.png)
+
+urls.py
+
+![p urls](https://user-images.githubusercontent.com/55660566/207122580-48478fa5-e829-49c2-a8ea-35238b1c26b4.png)
+
+views.py
+
+![p views](https://user-images.githubusercontent.com/55660566/207122582-99dceb9a-29de-4caf-9466-2d8043a25a0d.png)
+
++ REVIEW APP
+
+admin.py
+
+![r admin](https://user-images.githubusercontent.com/55660566/207128015-3abc19b4-e90b-4c63-b89c-21f3e749a9df.png)
+
+apps.py
+
+![r apps](https://user-images.githubusercontent.com/55660566/207128019-7c3adf0d-b780-432a-83ac-8075faebb932.png)
+
+forms.py
+
+![r forms](https://user-images.githubusercontent.com/55660566/207128021-36c1a7e0-c19b-4f9e-829c-b8ce6748f904.png)
+
+models.py
+
+![r models](https://user-images.githubusercontent.com/55660566/207128024-1831fdc2-8777-46d1-bbad-db7566451725.png)
+
+urls.py
+
+![r urls](https://user-images.githubusercontent.com/55660566/207128025-13da6714-de90-449a-92bb-70dc3a74dce8.png)
+
+views.py
+
+![r view](https://user-images.githubusercontent.com/55660566/207128471-cb85d99b-2990-4896-9c08-8f1a5547ccdb.png)
+
 
 ----------python images-------------------
 ----------python images-------------------
@@ -241,9 +384,12 @@ All files passed without errors, with some only displaying a warning of 'no new 
 
 Checkout/models.py is the only file which an error shows in the terminal for a 'line too long' even after the line is slpit, when passed through CI's checker, the error is not picked up so the code is left as is. 
 
------------Checkout/models.py-------------------
+![checkout models ci linter](https://user-images.githubusercontent.com/55660566/207109911-02d9cd88-7877-4191-91bd-d00d569dfa42.png)
+![checkout models](https://user-images.githubusercontent.com/55660566/207109916-c15d626a-1715-4428-8625-eeeb57d69465.png)
 
-settings.py shows error for 'line too long' but these are the 'AUTH_PASSWORD_VALIDATORS' which I was told for tutors on slack as it's not our(students) own code this can be ignored
+
+
+settings.py shows error for 'line too long' but these are the 'AUTH_PASSWORD_VALIDATORS' which I was told by tutors/leads on slack that as it's not our(students) own code this can be ignored.
 
 
 ## HTML validation
