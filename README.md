@@ -203,7 +203,7 @@ If an admin is logged in, an extra option will be available in the dropdown to a
 ![dropdown admin option](https://user-images.githubusercontent.com/55660566/206844061-9c0e5d77-a46e-4210-94ff-1b40df2c2b62.png)
 
 
-If the user choses to proceed with payment they are taken to the checkout page, where are require to fill out a short form consisting of name, email, phone number which are required, and postcode along with a text area to input their credit card details.
+If the user choses to proceed with payment they are taken to the checkout page, where are require to fill out a short form consisting of name, email, phone number which are required, and postcode along with a text area to input their credit card details, testing the payment functionality is done using the number '4242424242424242 42/42 424 2424'.
 
 ![checkout1](https://user-images.githubusercontent.com/55660566/206849837-8e7c1fe5-2bb0-48df-8382-9cf078f9f23b.png)
 
@@ -225,6 +225,12 @@ Should the processing of an order fail, a message is displayed to the user infor
 When the card number '4000002500003155 42/42 424 2424' is used the follow authentication model is displayed to the user to authenticate their order payment.
 
 ![auth modal](https://user-images.githubusercontent.com/55660566/207136021-0c127919-ef1b-4fa1-88fd-6f04eab9044b.png)
+
+### Custom 404 Page
+If a user should enter a url that does not exist as part of the site they will be directed to a custom 404 page, whichs displays the text 'Its Looks Like You're Looking For A Page That Doesn't Exist' along with a button/link back to the packages page.
+
+![404](https://user-images.githubusercontent.com/55660566/207146141-51cc2b0d-4490-4295-9c04-60f1b4c3de15.png)
+
 
 ## User Story Testing
 
@@ -429,11 +435,30 @@ Javascript files passed with only warnings relating to es6, which I was told by 
 ![js](https://user-images.githubusercontent.com/55660566/206922122-e94430eb-dda8-4f2a-ac24-c2b7d76403e6.png)
 ![js-stripe](https://user-images.githubusercontent.com/55660566/206922125-ce11441f-09d3-43e4-ba12-54c2e3dbb2df.png)
 
+## SEO
 
+I used wordtracker.com to help choose the most relevant keywords for my site the were low competition but relatively high volume. 
+Some examples of changes made to existing text in order to use relevant keywords include;
+webdesign - added to the index h1 and packages h2
+Grow Business Online - later added to the reviews page
+Online Business - added to packages h3
+best website builder for small business - implented to pacakes h3
+
+Also some keywords where wrapped in 'strong' tags where they where not previously.
+In socials links in the footer the 'rel' attribute was added as 'rel="noopener"'in order to tell search engines not to include the links when looking at the search engine ranking.
+'Webdesign' was added to the alt attributes of the carosel from the index page, as opposed to the original 'first slide, second slide' etc.
+
+website for small business 
+business website builder 
+best website builder
+cost to build a website
+family business 
+small business
+and I also used google's suggestions after searching some the keywords myself
 
 
 ## Accessibility
-I tested the sites accessibility through lighthouse.
+I tested the sites accessibility and SEO score through lighthouse.
 
 ![lighthouse](https://user-images.githubusercontent.com/55660566/206921804-0c9d10ea-e08a-4ffa-9321-b0f028756fe3.png)
 
@@ -458,8 +483,7 @@ signals.py taken from b/a
 checkout/forms - taken from b/a
 stripe elements.js code - b/a
 checkout success - bs used from b/a
-webhook handler.py
-webhooks.py - though most is stripes own code
+
 
 
 
