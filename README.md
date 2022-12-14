@@ -4,7 +4,7 @@
 
 # BluePrint WebDesigns
 
-BluePrint WebDesigns is an online service for users to purchase four different levels of web development packages to help run there business. These range from simple sites for advertising services to full e-commerce/online shopping websites. User can browse the site owners existing body of work, purchase the available packages, and also leave reviews.
+BluePrint WebDesigns is a business to  business (b2b) e-commerce site providing an online service for users to purchase four different levels of web development packages to help run there business. These range from simple sites for advertising services to full e-commerce/online shopping websites. User can browse the site owners existing body of work, purchase the available packages, and also leave reviews.
 
 
 You can view the live site here ----deployed link-----
@@ -436,6 +436,7 @@ Javascript files passed with only warnings relating to es6, which I was told by 
 ![js-stripe](https://user-images.githubusercontent.com/55660566/206922125-ce11441f-09d3-43e4-ba12-54c2e3dbb2df.png)
 
 ## SEO
+
 
 I used wordtracker.com to help choose the most relevant keywords for my site the were low competition but relatively high volume. 
 Some examples of changes made to existing text in order to use relevant keywords include;

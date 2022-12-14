@@ -96,7 +96,7 @@
               <a href="https://ci-pp5-blueprint-webdesigns.herokuapp.com/admin" target="_blank"
                 class="dropdown-item">Admin Panel</a>
               {% endif %}
-              <span class=" ">Logged in: {{ user }} </span>
+              <span class=" ">Logged in as: <br> <strong>{{ user }}</strong> </span>
               <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                 href="{% url 'view_cart' %}">My Cart
