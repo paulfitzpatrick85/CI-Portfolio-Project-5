@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: /checkout/
+Sitemap: https://ci-pp5-blueprint-webdesigns.herokuapp.com/sitemap.xml

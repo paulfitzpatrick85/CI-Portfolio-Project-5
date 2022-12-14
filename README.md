@@ -439,22 +439,26 @@ Javascript files passed with only warnings relating to es6, which I was told by 
 
 I used wordtracker.com to help choose the most relevant keywords for my site the were low competition but relatively high volume. 
 Some examples of changes made to existing text in order to use relevant keywords include;
-webdesign - added to the index h1 and packages h2
-Grow Business Online - later added to the reviews page
-Online Business - added to packages h3
-best website builder for small business - implented to pacakes h3
++ webdesign - added to the index h1 and packages h2
++ Grow Business Online - later added to the reviews page
++ Online Business - added to packages h3
++ best website builder for small business - implented to pacakes h3
++ and I also used google's suggestions after searching some the keywords myself.
 
 Also some keywords where wrapped in 'strong' tags where they where not previously.
 In socials links in the footer the 'rel' attribute was added as 'rel="noopener"'in order to tell search engines not to include the links when looking at the search engine ranking.
 'Webdesign' was added to the alt attributes of the carosel from the index page, as opposed to the original 'first slide, second slide' etc.
 
-website for small business 
-business website builder 
-best website builder
-cost to build a website
-family business 
-small business
-and I also used google's suggestions after searching some the keywords myself
+I also added to the root folder, a sitemap.xml created and downloaded from www.xml-sitemaps.com  
+
+To control search engine bot crawling, I added a robots.txt file, disallowing crawling of the accounts, cart and checkout pages.
+
+
+
+
+
+
+
 
 
 ## Accessibility
