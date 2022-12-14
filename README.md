@@ -454,10 +454,17 @@ I also added to the root folder, a sitemap.xml created and downloaded from www.x
 
 To control search engine bot crawling, I added a robots.txt file, disallowing crawling of the accounts, cart and checkout pages.
 
+## Web Marketing
+I created a facebook business page with links to my live site.
 
+![facebook image](https://user-images.githubusercontent.com/55660566/207717621-be22dd75-9260-4aea-82a3-a66ef1a4b46a.png)
 
+Within an hour of creating the page, and going to different setup options in facebook, my page was removed from facebook as per the reasonong in the images below:
 
+![fb remove](https://user-images.githubusercontent.com/55660566/207718697-5b2828f6-2ba2-4713-8fbc-c3360a8362ef.jpg)
+![fb remove2](https://user-images.githubusercontent.com/55660566/207718702-7a3627c2-6664-440c-b4ea-70dc247d842f.jpg)
 
+I have multiple business accounts on facebook for other interests so I assume facebook picked up on this.
 
 
 
