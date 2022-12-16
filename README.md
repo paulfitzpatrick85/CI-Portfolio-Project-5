@@ -152,10 +152,14 @@ Users can view a large thumbnail of the home page of one of eight sites, each wi
 
 Users can contact the site owner using the form on the 'Get In Touch' page. A user can fill in a short form: name, email and message in order to enquire about potential collaboration.
 
-Users can also sign up to news letter - code provided by chimpmail.com, to be added to the mailling list.
-
-
 ![contact](https://user-images.githubusercontent.com/55660566/205743232-f5f1e3e7-8ed5-445e-8db5-76b3e2ff6fe6.png)
+
+Users can also sign up to a news letter - code provided by chimpmail.com, to be added to the mailling list. 
+
+![newletter](https://user-images.githubusercontent.com/55660566/208184719-49501788-6bd4-4874-a5c9-3b583a2b252d.png)
+
+![chimpmail](https://user-images.githubusercontent.com/55660566/208184733-03a44a90-276b-4277-bac4-09147fdddfb8.png)
+
 
 ## Packages Page
 The Packages pages provides details of the products/web-dev packages available for purchase, the information is delivered to the site through the package model in /admin rather than a json file as used in the walkthrough project Boutique Ado. Users will see four different packages, each with their own unique title to somewhat describe them at a glance, along with a short description, the price excluding tax.
@@ -493,14 +497,15 @@ The site is designed to be used on devices as small as 320px.
 
 
 ## Credits
-+ checkout models - most of code take from b/a project but changed slightly
-signals.py taken from b/a
-checkout/forms - taken from b/a
-stripe elements.js code - b/a
-checkout success - bs used from b/a
+Code taken from boutique ado and changed to suit the needs of this site
++ checkout models 
++ signals.py 
++ checkout/forms 
++ stripe elements.js code 
++ checkout success - the bootstrap used in the walkthrough was used for this site
++ any code I may have missed to credit is unintentional and not a claim as my own but I wish to acknowledge I may have missed something in the checkout app in particular considering the size of Boutique Ado (which I used as a guide to building my own checkout)
 
-
-
++ all images and background are taken for pexels.com, except for the 'you are here' pin on the 'our work' page which was taken from a google search from which the image appeared in multipe sources but for a fee even though the exact image appeared to be 'owned' by many different sites/users of paid image sites.
 
 
 ## Deployment 
