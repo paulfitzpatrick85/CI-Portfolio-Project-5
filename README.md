@@ -150,7 +150,10 @@ Users can view a large thumbnail of the home page of one of eight sites, each wi
 
 ## Contact and NewsLetter Sign Up Form
 
-Users can contact the site owner using the form on the 'Get In Touch' page. A user can fill in a short form: name, email and message in order to both subscribe to the sites newsletter and to enquire about potential collaboration.
+Users can contact the site owner using the form on the 'Get In Touch' page. A user can fill in a short form: name, email and message in order to enquire about potential collaboration.
+
+Users can also sign up to news letter - code provided by chimpmail.com, to be added to the mailling list.
+
 
 ![contact](https://user-images.githubusercontent.com/55660566/205743232-f5f1e3e7-8ed5-445e-8db5-76b3e2ff6fe6.png)
 

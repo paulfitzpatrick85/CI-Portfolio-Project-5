@@ -1,357 +1,358 @@
- /*------------------base css----------------------------*/
- @import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Maven+Pro&family=Montserrat&display=swap');
- footer{
-    
-     margin-top: 5%;
-     width: 100%;
- }
- 
- /* stop dropdown appearing off screen and creating horizontal scroll*/
- .account {
-     margin-right: 80px;
- }
- 
- body {
-     background: url('/media/blueprint-background-unsplash.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
-     background-size: cover;                                                                  /*makes image stay in center of page*/
-     padding:0; 
-     margin:0; 
-     height:100%; 
-     font-family: 'Maven Pro', sans-serif;
-     min-height: 100vh;
-     display: flex;
-     flex-direction: column;
-     margin: 0;
-       }
+    /*------------------base css----------------------------*/
+    @import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Maven+Pro&family=Montserrat&display=swap');
+    footer{
        
-     main {
-     flex-grow: 1;
-     }
- 
- 
- .logo-font {
-     text-align: center;
-     font-family: 'Island Moments', cursive;
-     font-size:80px
- }
- 
- .remove-item {
-     cursor: pointer;
- }
- 
- /* from Bulma */           /*css from bulma- like bs library, keeps fs icon center and same size unless made otherwise*/
- .icon {                       
-     align-items: center;
-     display: inline-flex;
-     justify-content: center;
-     height: 1.5rem;
-     width: 1.5rem;
- }
- 
- .nav-brand-text {
-     font-size:x-large
- }
- 
- .text-white {
-     color: white;
- }
- 
- .bluetext {
-     color: #4cbcd7;
- }
- 
- .navbar-toggler {
-     color: white;
- }
- 
- /*log in, signup log out boxes*/
- .all-forms {
-     background-color: #31313B;
-     width: 40%;
-     margin: auto; 
-     padding: 2%;
-     border-radius:8px;
-     color: antiquewhite;
+        margin-top: 5%;
+        width: 100%;
+    }
     
- }
- .all-forms-2 {
-     width: 40%;
-     padding: 2%;
-     color: antiquewhite; 
- }
- 
- #id_message.textarea {
-     width: 90%;
-  }
- 
- .text-align {
-     text-align: center;
- }
- 
- .btn-signup {
-     background-color:antiquewhite;
-     color:black; 
-     margin: 2%;    
- }
- 
- .carousel-image {
-     border-radius: 5%;
-     height: 300px;   
- }
- 
- .message-container {
-    position: fixed;
-    top: 80px;
-    right: 25px;
-    z-index: 999999999; 
- }
- 
- .lang-img {
-     width: 15%;
-     height: 20%;
-     border-radius: 5%;
- }
- 
- #mc_embed_signup {
-     border: #fefde5 solid 4px;
-     background-color:  #4cbcd7;
-     width: 600px;
-     margin:auto;
-     padding: 2%;
-     border-radius:8px;
-     color: antiquewhite;
-     clear: left;
-     font: 14px Helvetica, Arial, sans-serif;
- }
- /*---------------subscribe page-----------------*/
- 
- .overlay {
-     height: 100%;
-     width: 100%;
-     top: 0;
-     left: 0;
-     position: fixed;
-     background: #4cbcd7 ;
-     z-index: -1;  /*make this sit on top of everything else on page*/
- }
- 
- .overlay-lightbulb {
-     height: 100%;
-     width: 100%;
-     top: 0;
-     left: 0;
-     position: fixed;
-     background: url('/media/lightbulb.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
-     background-size: cover;     
-     z-index: -1;  
- }
- 
- .opacity {
-     opacity: 0.2;
- }
- 
- hr {
-     width: 50%;
- }
- 
- .alert {
-     background-color: aqua;
-     width: 50%;
- }
- 
- 
- /*----projects----*/
- 
- .proj-img {
-     padding: 4px;
-     border: black solid 1px;
-     width: 60%;
-     height: 13%;
-     border-radius: 50%;
- }
- 
- .projects {
-     margin-left: 4%;
-     text-align: center;
- 
-   }
- 
-   .project-div {
-     height: 100%;
-   }
- 
-   .div-margin {
-     margin-bottom: 20px;
-   }
- 
- 
-   .project-description {
-    padding-left: 20%;
-    padding-right: 20%;
-   }
- 
- 
-   a {
-     color: white;
-   }
- 
-   .full-description {
-     margin: 10%;
+    /* stop dropdown appearing off screen and creating horizontal scroll*/
+    .account {
+        margin-right: 80px;
     }
- 
-    .pack-detail-img {
-     width: 30%;
+    
+    body {
+        background: url('/media/blueprint-background-unsplash.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
+        background-size: cover;                                                                  /*makes image stay in center of page*/
+        padding:0; 
+        margin:0; 
+        height:100%; 
+        font-family: 'Maven Pro', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+          }
+          
+        main {
+        flex-grow: 1;
+        }
+    
+    
+    .logo-font {
+        text-align: center;
+        font-family: 'Island Moments', cursive;
+        font-size:80px
     }
- 
- 
-   /*---------------------packages-------------------*/
- 
- .package-img {
-     width: 55%;
- }
- 
- .package-detail-img {
-     width: 40%;
- }
- 
- .package-div {
-     text-align: center;
-     height: 100%;
- }
- 
- .btn-outline-black {
-     background: white;
-     color: black !important; /* use important to override link colors for <a> elements */
-     border: 1px solid black;
- }
- 
- .hide {
-     display: none;
+    
+    .remove-item {
+        cursor: pointer;
+    }
+    
+    /* from Bulma */           /*css from bulma- like bs library, keeps fs icon center and same size unless made otherwise*/
+    .icon {                       
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    
+    .nav-brand-text {
+        font-size:x-large
+    }
+    
+    .text-white {
+        color: white;
+    }
+    
+    .bluetext {
+        color: #4cbcd7;
+    }
+    
+    .navbar-toggler {
+        color: white;
+    }
+    
+    /*log in, signup log out boxes*/
+    .all-forms {
+        background-color: #31313B;
+        width: 40%;
+        margin: auto; 
+        padding: 2%;
+        border-radius:8px;
+        color: antiquewhite;
+       
+    }
+    .all-forms-2 {
+        width: 40%;
+        padding: 2%;
+        color: antiquewhite; 
+    }
+    
+    #id_message.textarea {
+        width: 90%;
      }
- /*------------------cart-----------------------*/
- 
- .overlay-white {
-     height: 100%;
-     width: 100%;
-     top: 0;
-     left: 0;
-     position: fixed;
-     background: azure;
-     z-index: -1;  /*make this sit on top of everything else on page*/
- }
- 
- .pay-btn {
-     background-color: yellow;
-     border: black solid 2px;
- }
- 
- /*------------------stripe---------------------*/
- 
- .StripeElement,
- .stripe-style-input {
-   box-sizing: border-box;
-   height: 40px;
-   padding: 10px 12px;
-   border: 1px solid transparent;
-   border-radius: 0px;
-   background-color: white;
-   box-shadow: 0 1px 3px 0 #e6ebf1;
-   -webkit-transition: box-shadow 150ms ease;
-   transition: box-shadow 150ms ease;
- }
- 
- .StripeElement--focus,
- .stripe-style-input:focus,
- .stripe-style-input:active {
-   box-shadow: 0 1px 3px 0 #cfd7df;
- }
- 
- .StripeElement--webkit-autofill {
-   background-color: #fefde5 !important;
- }
- 
- .stripe-style-input::placeholder {
-     color: #aab7c4;
- }
- 
- .fieldset-label {
-     position: relative;
-     right: .5rem;
- }
- 
- #payment-form .form-control,
- #card-element {
-     color: #000;
-     border: 1px solid #000;
- }
- 
- /* --------------- checkout pages--------------------------*/
- .success-page-btn {
-     background-color:antiquewhite;
-     color:black; 
-     margin: 2%;  
-     border: solid 3px #31313B;
- }
- 
- 
- /* --------------- Media Queries--------------------------*/
- 
- @media screen and (min-width: 940px) {
-     .projects {
-         display: grid;
-         grid-template-columns: auto auto auto;
-         text-align: center;
-         }
- }
- 
- 
- /* Slightly larger container on xl screens */      /*taken from walkthrough*/
- @media (min-width: 1200px) {
-   .container {
-     max-width: 80%;
-   }
- }
- 
- /* fixed top navbar only on medium and up */     /*taken from walkthrough*/
- @media (min-width: 992px) {
-     .fixed-top-desktop-only {
-         position: fixed;
-         top: 0;
-         right: 0;
-         left: 0;
-         z-index: 1030;
+    
+    .text-align {
+        text-align: center;
+    }
+    
+    .btn-signup {
+        background-color:antiquewhite;
+        color:black; 
+        margin: 2%;    
+    }
+    
+    .carousel-image {
+        border-radius: 5%;
+        height: 300px;   
+    }
+    
+    .message-container {
+       position: fixed;
+       top: 80px;
+       right: 25px;
+       z-index: 999999999; 
+    }
+    
+    .lang-img {
+        width: 15%;
+        height: 20%;
+        border-radius: 5%;
+    }
+    
+    #mc_embed_signup {
+        border: #fefde5 solid 4px;
+        background-color:  #4cbcd7;
+        width: 600px;
+        margin:auto;
+        padding: 2%;
+        border-radius:8px;
+        color: antiquewhite;
+        clear: left;
+        font: 14px Helvetica, Arial, sans-serif;
+       
+    }
+    /*---------------subscribe page-----------------*/
+    
+    .overlay {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background: #4cbcd7 ;
+        z-index: -1;  /*make this sit on top of everything else on page*/
+    }
+    
+    .overlay-lightbulb {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background: url('/media/lightbulb.jpg') no-repeat center center fixed;  /*makes image stay in center of page*/
+        background-size: cover;     
+        z-index: -1;  
+    }
+    
+    .opacity {
+        opacity: 0.2;
+    }
+    
+    hr {
+        width: 50%;
+    }
+    
+    .alert {
+        background-color: aqua;
+        width: 50%;
+    }
+    
+    
+    /*----projects----*/
+    
+    .proj-img {
+        padding: 4px;
+        border: black solid 1px;
+        width: 60%;
+        height: 13%;
+        border-radius: 50%;
+    }
+    
+    .projects {
+        margin-left: 4%;
+        text-align: center;
+    
+      }
+    
+      .project-div {
+        height: 100%;
+      }
+    
+      .div-margin {
+        margin-bottom: 20px;
+      }
+    
+    
+      .project-description {
+       padding-left: 20%;
+       padding-right: 20%;
+      }
+    
+    
+      a {
+        color: white;
+      }
+    
+      .full-description {
+        margin: 10%;
+       }
+    
+       .pack-detail-img {
+        width: 30%;
+       }
+    
+    
+      /*---------------------packages-------------------*/
+    
+    .package-img {
+        width: 55%;
+    }
+    
+    .package-detail-img {
+        width: 40%;
+    }
+    
+    .package-div {
+        text-align: center;
+        height: 100%;
+    }
+    
+    .btn-outline-black {
+        background: white;
+        color: black !important; /* use important to override link colors for <a> elements */
+        border: 1px solid black;
+    }
+    
+    .hide {
+        display: none;
+        }
+    /*------------------cart-----------------------*/
+    
+    .overlay-white {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background: azure;
+        z-index: -1;  /*make this sit on top of everything else on page*/
+    }
+    
+    .pay-btn {
+        background-color: yellow;
+        border: black solid 2px;
+    }
+    
+    /*------------------stripe---------------------*/
+    
+    .StripeElement,
+    .stripe-style-input {
+      box-sizing: border-box;
+      height: 40px;
+      padding: 10px 12px;
+      border: 1px solid transparent;
+      border-radius: 0px;
+      background-color: white;
+      box-shadow: 0 1px 3px 0 #e6ebf1;
+      -webkit-transition: box-shadow 150ms ease;
+      transition: box-shadow 150ms ease;
+    }
+    
+    .StripeElement--focus,
+    .stripe-style-input:focus,
+    .stripe-style-input:active {
+      box-shadow: 0 1px 3px 0 #cfd7df;
+    }
+    
+    .StripeElement--webkit-autofill {
+      background-color: #fefde5 !important;
+    }
+    
+    .stripe-style-input::placeholder {
+        color: #aab7c4;
+    }
+    
+    .fieldset-label {
+        position: relative;
+        right: .5rem;
+    }
+    
+    #payment-form .form-control,
+    #card-element {
+        color: #000;
+        border: 1px solid #000;
+    }
+    
+    /* --------------- checkout pages--------------------------*/
+    .success-page-btn {
+        background-color:antiquewhite;
+        color:black; 
+        margin: 2%;  
+        border: solid 3px #31313B;
+    }
+    
+    
+    /* --------------- Media Queries--------------------------*/
+    
+    @media screen and (min-width: 940px) {
+        .projects {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            text-align: center;
+            }
+    }
+    
+    
+    /* Slightly larger container on xl screens */      /*taken from walkthrough*/
+    @media (min-width: 1200px) {
+      .container {
+        max-width: 80%;
+      }
+    }
+    
+    /* fixed top navbar only on medium and up */     /*taken from walkthrough*/
+    @media (min-width: 992px) {
+        .fixed-top-desktop-only {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+    }
+    
+    
+    @media (max-width: 390px) {
+    .logo-font {
+        font-size: 40px;
+        }
+    }
+    
+    @media screen and (max-width: 750px) {
+    .all-forms{
+        width: 70%;
+        }
+    }
+    
+    @media screen and (max-width: 750px) {
+    .all-forms-2{
+        width: 70%;
      }
- }
- 
- 
- @media (max-width: 390px) {
- .logo-font {
-     font-size: 40px;
-     }
- }
- 
- @media screen and (max-width: 750px) {
- .all-forms{
-     width: 70%;
-     }
- }
- 
- @media screen and (max-width: 750px) {
- .all-forms-2{
-     width: 70%;
-  }
- }
- 
- @media (max-width: 1017px) {
- .hide-pipe {
-      display: none;
-     }
- }
- 
- @media (max-width: 620px) {
-   #mc_embed_signup {
-      width: 90%;
-     }
- }
- 
- 
+    }
+    
+    @media (max-width: 1017px) {
+    .hide-pipe {
+         display: none;
+        }
+    }
+    
+    @media (max-width: 620px) {
+      #mc_embed_signup {
+         width: 90%;
+        }
+    }
+    
+   
