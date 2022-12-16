@@ -33,3 +33,9 @@ def subscribe_form(request):
         'form': form, 'sub_added': True,
     }
     return render(request, 'subscribe.html', context)
+
+
+def newsletter(request):
+    """ A view to return the newsletter page """
+
+    return render(request, 'newsletter.html')
