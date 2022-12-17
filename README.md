@@ -354,6 +354,10 @@ And I also transferred previous projects database's from heroku to elephantSQL s
 ## Bugs
 Webhooks are not used as I continued to get an 404 error telling me the url checkout/wh/ could not be found. I ran this problem through two tutors and my mentor and still could not solve the issue.
 
+The django admin will not allow me to 'approve reviews' from the dropdown menu, but can be approved when the box it ticked in the individual reviews, obviously this is not an error on my part as a similar error occured with the delete function of my admin in my pp4, but I want to make assessors aware of this anyway, and to note the approve function from the model does indeed work.
+
+![django bug](https://user-images.githubusercontent.com/55660566/208255918-d5de77f3-16fa-4540-a795-4e54f21669c5.png)
+
 
 ## Code Validation
 ### Files for PEP8 validation checked through code institues own checker - https://pep8ci.herokuapp.com/
