@@ -233,6 +233,13 @@ When the card number '4000002500003155 42/42 424 2424' is used the follow authen
 
 ![auth modal](https://user-images.githubusercontent.com/55660566/207136021-0c127919-ef1b-4fa1-88fd-6f04eab9044b.png)
 
+## Handling Payments - Stripe
+
+I setup an account with stripe to handle payments, stripe is used to process a user payment once they 'complete order'. If the order is successful - the user will know as detailed above. On the stripe website, in the events tab of the developer dashboard, if the payment is successful three events will have been created; created, charged and successful. As noted in the BUGS sections, webhooks are not used.
+
+![stripe](https://user-images.githubusercontent.com/55660566/208193667-49ed77d3-b138-4070-ac3b-71717b10381a.png)
+
+
 ### Custom 404 Page
 If a user should enter a url that does not exist as part of the site they will be directed to a custom 404 page, whichs displays the text 'Its Looks Like You're Looking For A Page That Doesn't Exist' along with a button/link back to the packages page.
 
@@ -247,6 +254,101 @@ If a user should enter a url that does not exist as part of the site they will b
 + Users can add and remove packages from their cart easily.
 + Users can sign up to a news letter and attached a message to the site owner.
 + Users Can leave reviews of the service, which can later be edited or deleted.
+
+
+
+## SEO
+
+I used wordtracker.com to help choose the most relevant keywords for my site the were low competition but relatively high volume. 
+Some examples of changes made to existing text in order to use relevant keywords include;
++ webdesign - added to the index h1 and packages h2
++ Grow Business Online - later added to the reviews page
++ Online Business - added to packages h3
++ best website builder for small business - implented to pacakes h3
++ and I also used google's suggestions after searching some the keywords myself.
+
+Also some keywords where wrapped in 'strong' tags where they where not previously.
+In socials links in the footer the 'rel' attribute was added as 'rel="noopener"'in order to tell search engines not to include the links when looking at the search engine ranking.
+'Webdesign' was added to the alt attributes of the carosel from the index page, as opposed to the original 'first slide, second slide' etc.
+
+I also added to the root folder, a sitemap.xml created and downloaded from www.xml-sitemaps.com  
+
+To control search engine bot crawling, I added a robots.txt file, disallowing crawling of the accounts, cart and checkout pages.
+
+## Web Marketing
+I created a facebook business page with links to my live site.
+
+![facebook image](https://user-images.githubusercontent.com/55660566/207717621-be22dd75-9260-4aea-82a3-a66ef1a4b46a.png)
+
+Within an hour of creating the page, and going to different setup options in facebook, my page was removed from facebook as per the reasonong in the images below:
+
+![fb remove](https://user-images.githubusercontent.com/55660566/207718697-5b2828f6-2ba2-4713-8fbc-c3360a8362ef.jpg)
+![fb remove2](https://user-images.githubusercontent.com/55660566/207718702-7a3627c2-6664-440c-b4ea-70dc247d842f.jpg)
+
+I have other business accounts on facebook for other interests so I assume facebook picked up on this.
+
+
+
+
+## Accessibility
+I tested the sites accessibility and SEO score through lighthouse, which gave SEO and accessibility scores of 100.
+
+![lighthouse](https://user-images.githubusercontent.com/55660566/208238534-287b0780-dbdc-4eb7-b94f-6a67fa3d1cd9.png)
+
+
+
+## Responsiveness
+The site is designed to be used on devices as small as 320px.
+
+## Mockup Images
+
+![mockup home](https://user-images.githubusercontent.com/55660566/193449720-0c2cd888-724e-4bbf-b7d4-088bd518a727.jpg)
+
+![mockup products page](https://user-images.githubusercontent.com/55660566/193449675-9247bc33-49d0-4df7-aad0-3c25b6f1c03d.jpg)
+
+![mockup review](https://user-images.githubusercontent.com/55660566/193449676-9c6acc80-9711-48ce-b37a-7bba0ed90dc1.jpg)
+
+![mockup contact page](https://user-images.githubusercontent.com/55660566/193449680-d73b0359-d56c-482e-bdca-2fde3bc1ee22.jpg)
+
+
+## Credits
+Code taken from boutique ado and changed to suit the needs of this site
++ checkout models 
++ signals.py 
++ checkout/forms 
++ stripe elements.js code 
++ checkout success - also the bootstrap used in the walkthrough was used for this site
++ all images and background are taken for pexels.com, except for the 'you are here' pin on the 'our work' page which was taken from a google search from which the image appeared in multipe sources but for a fee even though the exact image appeared to be 'owned' by many different sites/users of paid image sites.
+
+
+## Deployment 
+To deploy the project:
++ In settings.py I set DEBUG to 'False' 
++ I pushed my work to github in the gitpod terminal using the commands: 'git add .', 'git commit -m "commit message"', 'git push'.
++ I used Amazon Web Services to store my static and media files.
+
+![aws](https://user-images.githubusercontent.com/55660566/208237621-41fde8c1-a5be-48a0-86e2-b3a29af949b6.png)
+
+![s3](https://user-images.githubusercontent.com/55660566/208237624-2e99afb4-3153-4703-a87a-84359957042e.png)
+
+With using AWS for media I had to change my paths for img's from for example 'src="media/web_design_logo.png"' to 'src="{{ MEDIA_URL }}web_design_logo.png"'. As a result the media files do not render locally anymore but are fine in the live site. (for further development of the project after I deployed, I simply pasted my css file into style tags in my base.html so that I see how things looked as I made further changes)
++ I used elephantSQL to store my database for the site.
+
+![esql](https://user-images.githubusercontent.com/55660566/208238356-2d9e33fa-5c58-4a2d-90a2-b3ae1f8767d8.png)
+
+And I also transferred previous projects database's from heroku to elephantSQL so that they may be view when a user selects them from the 'our work' page.
+
+![esql2](https://user-images.githubusercontent.com/55660566/208238357-c971acfd-b65a-497e-bd20-2d62f30a2493.png)
+
+
++ In heroku settings, under config vars, I added the config variable's; AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and USE_AWS =True - for AWS, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY - for stripe, DATABASE_URL - for elephant SQL, and my SECRET_KEY var.  
++ In the heroku deploy tab I connected my github repository for the project to the heroku app.
++ I enabled automatic deploys then clicked 'deploy branch' to build the live app, and to have it rebuild upon every git push.
+
+![h1](https://user-images.githubusercontent.com/55660566/208238711-a60bb752-e76a-47d5-9dde-90ba1160cb30.png)
+
+![h2](https://user-images.githubusercontent.com/55660566/208238712-fa42b44f-647e-46e1-bdcd-d79a80edef5d.png)
+
 
 
 ## Bugs
@@ -403,6 +505,7 @@ views.py
 Checkout/models.py is the only file which an error shows in the terminal for a 'line too long' even after the line is split, when passed through CI's checker, the error is not picked up so the code is left as is. 
 
 ![checkout models ci linter](https://user-images.githubusercontent.com/55660566/207109911-02d9cd88-7877-4191-91bd-d00d569dfa42.png)
+
 ![checkout models](https://user-images.githubusercontent.com/55660566/207109916-c15d626a-1715-4428-8625-eeeb57d69465.png)
 
 settings.py shows error for 'line too long' but these are the 'AUTH_PASSWORD_VALIDATORS', which I was told by tutors/leads on slack that as it's not our(students) own code this can be ignored.
@@ -442,76 +545,3 @@ Javascript files passed with only warnings relating to es6, which I was told by 
 ![js](https://user-images.githubusercontent.com/55660566/206922122-e94430eb-dda8-4f2a-ac24-c2b7d76403e6.png)
 ![js-stripe](https://user-images.githubusercontent.com/55660566/206922125-ce11441f-09d3-43e4-ba12-54c2e3dbb2df.png)
 
-## SEO
-
-
-I used wordtracker.com to help choose the most relevant keywords for my site the were low competition but relatively high volume. 
-Some examples of changes made to existing text in order to use relevant keywords include;
-+ webdesign - added to the index h1 and packages h2
-+ Grow Business Online - later added to the reviews page
-+ Online Business - added to packages h3
-+ best website builder for small business - implented to pacakes h3
-+ and I also used google's suggestions after searching some the keywords myself.
-
-Also some keywords where wrapped in 'strong' tags where they where not previously.
-In socials links in the footer the 'rel' attribute was added as 'rel="noopener"'in order to tell search engines not to include the links when looking at the search engine ranking.
-'Webdesign' was added to the alt attributes of the carosel from the index page, as opposed to the original 'first slide, second slide' etc.
-
-I also added to the root folder, a sitemap.xml created and downloaded from www.xml-sitemaps.com  
-
-To control search engine bot crawling, I added a robots.txt file, disallowing crawling of the accounts, cart and checkout pages.
-
-## Web Marketing
-I created a facebook business page with links to my live site.
-
-![facebook image](https://user-images.githubusercontent.com/55660566/207717621-be22dd75-9260-4aea-82a3-a66ef1a4b46a.png)
-
-Within an hour of creating the page, and going to different setup options in facebook, my page was removed from facebook as per the reasonong in the images below:
-
-![fb remove](https://user-images.githubusercontent.com/55660566/207718697-5b2828f6-2ba2-4713-8fbc-c3360a8362ef.jpg)
-![fb remove2](https://user-images.githubusercontent.com/55660566/207718702-7a3627c2-6664-440c-b4ea-70dc247d842f.jpg)
-
-I have multiple business accounts on facebook for other interests so I assume facebook picked up on this.
-
-
-
-
-## Accessibility
-I tested the sites accessibility and SEO score through lighthouse.
-
-![lighthouse](https://user-images.githubusercontent.com/55660566/206921804-0c9d10ea-e08a-4ffa-9321-b0f028756fe3.png)
-
-
-## Responsiveness
-The site is designed to be used on devices as small as 320px.
-
-## Mockup Images
-
-![mockup home](https://user-images.githubusercontent.com/55660566/193449720-0c2cd888-724e-4bbf-b7d4-088bd518a727.jpg)
-
-![mockup products page](https://user-images.githubusercontent.com/55660566/193449675-9247bc33-49d0-4df7-aad0-3c25b6f1c03d.jpg)
-
-![mockup review](https://user-images.githubusercontent.com/55660566/193449676-9c6acc80-9711-48ce-b37a-7bba0ed90dc1.jpg)
-
-![mockup contact page](https://user-images.githubusercontent.com/55660566/193449680-d73b0359-d56c-482e-bdca-2fde3bc1ee22.jpg)
-
-
-## Credits
-Code taken from boutique ado and changed to suit the needs of this site
-+ checkout models 
-+ signals.py 
-+ checkout/forms 
-+ stripe elements.js code 
-+ checkout success - the bootstrap used in the walkthrough was used for this site
-+ any code I may have missed to credit is unintentional and not a claim as my own but I wish to acknowledge I may have missed something in the checkout app in particular considering the size of Boutique Ado (which I used as a guide to building my own checkout)
-
-+ all images and background are taken for pexels.com, except for the 'you are here' pin on the 'our work' page which was taken from a google search from which the image appeared in multipe sources but for a fee even though the exact image appeared to be 'owned' by many different sites/users of paid image sites.
-
-
-## Deployment 
-To deploy the project:
-+ In settings.py I set DEBUG to 'False' and added the code "X_FRAME_OPTIONS = 'SAMEORIGIN'"
-+ I then pushed my work to github in the the gitpod terminal using the commands: 'git add .', git commit -m "commit message"', 'git push'.
-+ In heroku settings I removed the config variable 'DISABLE_COLLECTSTATIC'
-+ In the heroku deploy tab I connected my github repository for the project to the heroku app.
-+ I enabled automatic deploys then clicked 'deploy branch' to build the live app.
