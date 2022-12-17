@@ -551,3 +551,19 @@ Javascript files passed with only warnings relating to es6, which I was told by 
 ![js](https://user-images.githubusercontent.com/55660566/206922122-e94430eb-dda8-4f2a-ac24-c2b7d76403e6.png)
 ![js-stripe](https://user-images.githubusercontent.com/55660566/206922125-ce11441f-09d3-43e4-ba12-54c2e3dbb2df.png)
 
+## USERS
+### User info including the superuser name,email and passwords should an assessor need to use them
+
++ superuser 1
++ username:mainadmin
++ password:newadmin
++ 
++ testuser - 1
++ email: testuser1@gmail.com
++ usename: testuser1
++ password: pass12345
++ 
++ testuser  -2
++ email: testuser2@gmail.com
++ usename: testuser2
++ password: test12345
