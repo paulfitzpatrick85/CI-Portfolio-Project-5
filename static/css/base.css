@@ -63,6 +63,8 @@
     .navbar-toggler {
         color: white;
     }
+
+
     
     /*log in, signup log out boxes*/
     .all-forms {
@@ -348,7 +350,7 @@
      }
     }
     
-    @media (max-width: 1017px) {
+    @media (max-width: 1115px) {
     .hide-pipe {
          display: none;
         }
@@ -360,4 +362,8 @@
         }
     }
     
-   
+    @media (max-width: 600px) {
+    #carouselExampleIndicators {
+        width: 70%;
+            }
+        }

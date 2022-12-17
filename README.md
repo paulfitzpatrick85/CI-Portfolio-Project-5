@@ -525,6 +525,8 @@ All pages passed without errors.
 ![projects](https://user-images.githubusercontent.com/55660566/206921747-3597fc8b-87da-406d-be44-a01d780ff30e.png)
 ![reviews](https://user-images.githubusercontent.com/55660566/206921748-e9215dad-1a8f-436b-b005-069100a51363.png)
 ![subscribe](https://user-images.githubusercontent.com/55660566/206921749-247f7f4d-2256-409a-9d83-f770adca5e19.png)
+![newsletter](https://user-images.githubusercontent.com/55660566/208240121-4b0445ec-b38f-479a-a3c8-044e98968b3d.png)
+
 
 
 
