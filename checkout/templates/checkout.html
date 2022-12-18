@@ -9,7 +9,7 @@
 <div>
     <div class="row">
         <div class="col text-align">
-            <!---------------------order summary------------------------->
+            <!--------------order summary---------------->
             <div class="row mr-3">
                 <div class="col-12 col-lg-6 order-lg-last mb-5">
                     <p class="text-muted">Order Summary</p>
@@ -23,21 +23,21 @@
                         </div>
                     </div>
                     {% for item in cart_items %}
-                        <div class="row">
-                            <div class="col-2 mb-1">
-                                <a href="{% url 'package_detail' item.package.id %}">
-                                        <img class="w-100" src="{{ item.package.image.url }}" alt="{{ package.name }}"> 
-                                </a>
-                            </div>
-                            <div class="col-7">
-                                <p class="my-0"><strong>{{ item.package.name }}</strong></p>
-                                
-                                <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
-                            </div>
-                            <div class="col-3 text-right">
-                                <p class="my-0 small text-muted">€{{ item.package.price }}</p>
-                            </div>
+                    <div class="row">
+                        <div class="col-2 mb-1">
+                            <a href="{% url 'package_detail' item.package.id %}">
+                                <img class="w-100" src="{{ item.package.image.url }}" alt="{{ package.name }}">
+                            </a>
                         </div>
+                        <div class="col-7">
+                            <p class="my-0"><strong>{{ item.package.name }}</strong></p>
+
+                            <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+                        </div>
+                        <div class="col-3 text-right">
+                            <p class="my-0 small text-muted">€{{ item.package.price }}</p>
+                        </div>
+                    </div>
                     {% endfor %}
                     <hr class="my-0">
                     <div class="row text-black text-right">
@@ -45,7 +45,7 @@
                             <p class="my-0">Order Total:</p>
 
                             <p class="my-0">Tax:</p>
-                        
+
                             <p class="my-0">Grand Total:</p>
                         </div>
                         <div class="col-3">
@@ -57,67 +57,63 @@
                 </div>
                 <div class="col-12 col-lg-6">
 
-            <!----------------------order sum end---------------------------------------------------------->
+                    <!----------order sum end-------------->
 
 
 
-            <p class="text-muted">Please fill out form to complete your order</p>
+                    <p class="text-muted">Please fill out form to complete your order</p>
 
 
-                <!----------------------form--------------------------------------------->
-                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-                    {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Your Details</legend>
-                        {{ package_ordered_form.customer_name }}
-                        <hr>
-                        {{ package_ordered_form.customer_email }}
-                        <hr>
-                        {{ package_ordered_form.phone_number }}
-                        <hr>
-                        {{ package_ordered_form.postcode }}
-                      <small id="Help" class="form-text text-muted">(Optional)</small>
-                    </fieldset>
+                    <!--------------------form------------------->
+                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                        {% csrf_token %}
+                        <fieldset class="rounded px-3 mb-5">
+                            <legend class="fieldset-label small text-black px-2 w-auto">Your Details</legend>
+                            {{ package_ordered_form.customer_name }}
+                            <hr>
+                            {{ package_ordered_form.customer_email }}
+                            <hr>
+                            {{ package_ordered_form.phone_number }}
+                            <hr>
+                            {{ package_ordered_form.postcode }}
+                            <small id="Help" class="form-text text-muted">(Optional)</small>
+                        </fieldset>
 
-                    <!-- may be removed later-->
-                    
+                        <fieldset class="px-3">
+                            <legend class="fieldset-label small text-black px-2">Please enter your debit/credit card
+                                details</legend>
+                            <!-- Stripe card element-->
+                            <div class="mb-3" id="card-element"></div>
+                            <!-- display form errors -->
+                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                            <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                        </fieldset>
 
-                    <fieldset class="px-3">
-                        <legend class="fieldset-label small text-black px-2">Please enter your debit/credit card details</legend>
-                        <!-- Stripe card element-->
-                        <div class="mb-3" id="card-element"></div>
-                        <!-- display form errors -->
-                        <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
-                    </fieldset>
-
-                    <div class="submit-button">                    
-						<a href="{% url 'view_cart' %}" class="btn btn-outline-black rounded">
-							<span class="icon">
-								<i class="fas fa-chevron-left"></i>
-							</span>
-							<span class="font-weight-bold">Return To Cart</span>
-						</a>
-						<button id="submit-button" class="btn pay-btn rounded">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
-						<p class="small text-danger my-0">
-							<span class="icon">
-								<i class="fas fa-exclamation-circle"></i>
-							</span>
-							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-						</p>
-					</div>
-                  </form>
-                <!--------------------------end of form------------------------->
-
-
+                        <div class="submit-button">
+                            <a href="{% url 'view_cart' %}" class="btn btn-outline-black rounded">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="font-weight-bold">Return To Cart</span>
+                            </a>
+                            <button id="submit-button" class="btn pay-btn rounded">
+                                <span class="font-weight-bold">Complete Order</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </button>
+                            <p class="small text-danger my-0">
+                                <span class="icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </span>
+                                <span>Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
+                            </p>
+                        </div>
+                    </form>
+                    <!---------------end of form------------------>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 {% endblock %}
 {% block postloadjs %}

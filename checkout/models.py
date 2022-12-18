@@ -5,7 +5,7 @@ from django.conf import settings
 from package.models import Package
 
 
-# modified from project
+# modified from project(boutique ado)
 class Package_ordered(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
     customer_name = models.CharField(max_length=50, null=False, blank=False)

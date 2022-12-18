@@ -25,7 +25,7 @@ def add_review(request):
             form.instance.customer_email = request.user.email
             form.instance.name = request.user.username
             review = form.save(commit=False)
-            review.save()        # see commits for original code
+            review.save()        
             messages.success(request, 'Thank your for reviewing our service, \
             your review will be displayed shortly.')
         else:

@@ -20,7 +20,7 @@ class PackageOrderedForm(forms.ModelForm):
             'phone_number': 'Phone Number',
             'postcode': 'postcode'
         }
-        # taken from b/a project
+        # taken from boutique ado project
         self.fields['customer_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:

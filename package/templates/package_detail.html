@@ -20,8 +20,8 @@
 
             <form class="form" action="{% url 'add_to_cart' package.id %}" method="POST">
                 {% csrf_token %}
-                <!--add to cart will not function without this, but Qty editing not wanted in project-->
-                <div class="form-row hide">
+                <!-- Qty editing not wanted in project at the moment, while pacakges are only available items, but code it kept to be used for future development after course-->
+                <div class="form-row hide-permanant">
                     <div class="col-12">
                         <p class="mt-3"><strong>Quantity:</strong></p>
                         <div class="form-group w-50">

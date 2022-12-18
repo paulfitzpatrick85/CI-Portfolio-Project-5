@@ -4,10 +4,10 @@
 
 # BluePrint WebDesigns
 
-BluePrint WebDesigns is a business to  business (b2b) e-commerce site providing an online service for users to purchase four different levels of web development packages to help run there business. These range from simple sites for advertising services to full e-commerce/online shopping websites. User can browse the site owners existing body of work, purchase the available packages, and also leave reviews.
+BluePrint WebDesigns is a business to  business (b2b) e-commerce site providing an online service for users to purchase four different levels of web development packages to help run their business. These range from simple sites for advertising services to full e-commerce/online shopping websites. User can browse the site owners existing body of work, purchase the available packages, and also leave reviews.
 
 
-You can view the live site here ----deployed link-----
+You can view the live site here https://ci-pp5-blueprint-webdesigns.herokuapp.com/
 
 ![amiresponsive](https://user-images.githubusercontent.com/55660566/206925022-9e51cb4f-fe6c-43de-ac24-3c089ac3887a.png)
 
@@ -107,12 +107,13 @@ Note if a user is not logged in, the buttons are not displayed.
 
 To edit a review, only the user who wrote the review can use the 'edit review' button which will bring them to a new page where they can see a form prepopulated with the information they originally inputted.
 
-![edit review pre-pop](https://user-images.githubusercontent.com/55660566/201522485-65438073-a84e-44c0-84e4-ac191aedcd14.png)
+![edit review](https://user-images.githubusercontent.com/55660566/208310577-b22645c1-e38f-49c5-bcc4-eeffb0828b59.png)
+
 
 
 The user can then change one or all fields as required, not all are required as before. (in this example the text just being shortened.)
 
-![edit form edited](https://user-images.githubusercontent.com/55660566/185779332-d4e5c9fe-61b9-41b5-b9bc-4284b92072b0.png)
+![er2](https://user-images.githubusercontent.com/55660566/208310642-9c5b0bc2-5c35-4379-a6e6-8af1f4e7608d.png)
 
 Once the user is finished making changes and clicks 'edit review', the form is submitted and a message is displayed to the user informing them their details have been edited and they should return to the reviews page.
 
@@ -125,7 +126,8 @@ Once back in the Reviews page, the user can see the updated review.
 If the user chooses to delete their review, they can click the 'delete review' button beneath their review.
 upon clicking the button, a modal will open asking the user 'Are you sure you want to delete this review?' The user can then either cancel the action by clicking cancel or proceed with the deletion and click 'delete'.
 
-![delete modal](https://user-images.githubusercontent.com/55660566/187296690-69238cd4-16e8-4cb7-a12b-d347852a56f2.png)
+![dm](https://user-images.githubusercontent.com/55660566/208310703-d501ecb2-8ba5-4208-93f5-3f12466b4172.png)
+
 
 When the review is confirmed for deletion in the modal, a message is displayed informing the user the review has been deleted.
 
@@ -164,11 +166,11 @@ Users can also sign up to a news letter - code provided by chimpmail.com, to be 
 ## Packages Page
 The Packages pages provides details of the products/web-dev packages available for purchase, the information is delivered to the site through the package model in /admin rather than a json file as used in the walkthrough project Boutique Ado. Users will see four different packages, each with their own unique title to somewhat describe them at a glance, along with a short description, the price excluding tax.
 
-![placeholder](https://user-images.githubusercontent.com/55660566/205745295-52af91b8-5cbf-4a15-8cb7-468e0f1c4516.jpg)----package page
+![pacakage](https://user-images.githubusercontent.com/55660566/208310851-beb57876-ef6c-4505-ab0f-03af971a7850.png)
 
 Clicking a package title or image will bring the user to the package detail page where a longer and more in depth description is displayed along with two buttons giving the option to add the package to their cart or return to the packages page.
 
-![placeholder](https://user-images.githubusercontent.com/55660566/205745295-52af91b8-5cbf-4a15-8cb7-468e0f1c4516.jpg) ---package detail
+![package detail](https://user-images.githubusercontent.com/55660566/208310852-8015e1d7-58f6-4096-b3bb-d8f6467fe0c3.png)
 
 If the user adds the item to their cart, a message will appear inform them the item is now in their cart.
 
@@ -363,9 +365,9 @@ And I also transferred previous projects database's from heroku to elephantSQL s
 
 
 ## Bugs
-Webhooks are not used as I continued to get an 404 error telling me the url checkout/wh/ could not be found. I ran this problem through two tutors and my mentor and still could not solve the issue.
+Webhooks are not used as I continued to get an 404 error telling me the url checkout/wh/ could not be found. I ran this problem past two tutors and still could not solve the issue.
 
-The django admin will not allow me to 'approve reviews' from the dropdown menu, but can be approved when the box it ticked in the individual reviews, obviously this is not an error on my part as a similar error occured with the delete function of my admin in my pp4, but I want to make assessors aware of this anyway, and to note the approve function from the model does indeed work.
+The django admin will not allow me to 'approve reviews' from the dropdown menu, but can be approved when the box it ticked in the individual reviews, I don't think this is an error on my part since as a similar error occured with the delete function of my admin in my pp4, but I want to make assessors aware of this anyway, and to note the approve function from the model does indeed work.
 
 ![django bug](https://user-images.githubusercontent.com/55660566/208255918-d5de77f3-16fa-4540-a795-4e54f21669c5.png)
 

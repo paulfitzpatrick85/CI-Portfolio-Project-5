@@ -228,6 +228,9 @@
         border: 1px solid black;
     }
     
+    .hide-permanant {
+        display: none;
+        }
     
     /*------------------cart-----------------------*/
     

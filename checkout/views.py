@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
-from django.shortcuts import HttpResponse  # line above too long
+from django.shortcuts import HttpResponse  # added here as line above too long
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from .forms import PackageOrderedForm
