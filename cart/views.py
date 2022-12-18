@@ -20,7 +20,7 @@ def add_to_cart(request, item_id):
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 
-    if item_id in list(cart.keys()):           # might/will be delete later
+    if item_id in list(cart.keys()):           
         messages.success(request, f'{package.name} is already in your cart')
     else:
         cart[item_id] = quantity

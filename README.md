@@ -239,6 +239,17 @@ I setup an account with stripe to handle payments, stripe is used to process a u
 
 ![stripe](https://user-images.githubusercontent.com/55660566/208193667-49ed77d3-b138-4070-ac3b-71717b10381a.png)
 
+When the payment has succeeded, and the order placed, they order details can be viewed by the admin in the package_orders tab.
+
+![django admin orders](https://user-images.githubusercontent.com/55660566/208303597-8645226c-c8c4-4a75-8864-f3d8bb4541e3.png)
+
+The details of the order can be viewed by clicking into an item on the list.
+
+![a1](https://user-images.githubusercontent.com/55660566/208303702-dc3316b9-00d4-4c8e-8ace-29bf9cf996a4.png)
+
+![a2](https://user-images.githubusercontent.com/55660566/208303707-449a0126-dae2-4906-9b26-8bc54f5f9fed.png)
+
+
 
 ### Custom 404 Page
 If a user should enter a url that does not exist as part of the site they will be directed to a custom 404 page, whichs displays the text 'Its Looks Like You're Looking For A Page That Doesn't Exist' along with a button/link back to the packages page.
